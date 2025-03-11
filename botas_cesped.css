@@ -16,7 +16,7 @@ header {
 }
 
 .logo img {
-    max-width: 150px;
+    max-width: 150px 150px;
 }
 
 .carro_de_compras {
@@ -137,7 +137,7 @@ h2 span {
     color: #ff3b80;
 }
 
-/* Media Queries para Responsive Design */
+/*  Botines Responsive */
 @media (max-width: 1200px) {
     .botines {
         padding: 60px;
