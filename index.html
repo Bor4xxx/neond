@@ -42,7 +42,7 @@
     <!-- Banner -->
 
     <section class="banner">
-        <img src="./media/Banner NEOND .gif" width="640PX" height="640PX" alt="Banner Home">
+        <img src="./media/Banner NEOND.gif" alt="Banner Home">
     </section>
 
     <!-- Sección de Botines -->
@@ -50,7 +50,7 @@
         <button id="productos" class="btn-morado" onclick="window.location.href='Botas_de_cesped.html'">
             BOTA DE CÉSPED
         </button>
-        <button class="btn-magenta">
+        <button class="btn-magenta" onclick="window.location.href='Botin_multitaco.html'">
             BOTÍN MULTITACO
         </button>
     </section>
@@ -139,7 +139,8 @@
 
 
     <script>
-        // Obtener el pop-up
+    
+        // Pop up
         var popup = document.getElementById("loginPopup");
 
         // Obtener el botón que abre el pop-up
@@ -159,7 +160,7 @@
             popup.style.display = "none";
         }
 
-        // Cuando el usuario hace clic fuera del pop-up, se cierra el pop-up
+        // fuera da click sale 
         window.onclick = function(event) {
             if (event.target == popup) {
                 popup.style.display = "none";

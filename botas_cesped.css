@@ -104,7 +104,7 @@ header {
     box-shadow: 0 0 10px #00a2ff, 0 0 20px #00a2ff, 0 0 40px #00a2ff, 0 0 80px #00a2ff;
 }
 
-
+/*
 /* Sección de información */
 .info {
     display: flex;
@@ -128,14 +128,56 @@ header {
 .texto {
     font-family: "Montserrat", sans-serif;
     flex: 1;
-    padding: 120px;
+    padding: 100px;
+    margin-left: -40px;
 }
+
+/* Estilo para el botón de compra */
+.boton-compra {
+    display:flex;
+    margin: 10px auto;
+    padding: 15px 20px;
+    font-size: 18px;
+    font-weight: bold;
+    color: white;
+    background-color: #ff3b80;
+    border: none;
+    border-radius: 18px;
+    cursor: pointer;
+    transition: 0.3s ease;
+    width: 100%;
+    max-width: 200px;
+}
+
+.boton-compra, .talla-select {
+    transform: translateX(-60px); /* Mueve el elemento a la izquierda */
+}
+
+/* Estilo para el selector de tallas */
+.talla-select {
+    display:flex;
+    margin: 10px auto;
+    padding: 10px;
+    font-size: 16px;
+    border-radius: 8px;
+    border: 2px solid #ff3b80;
+    background-color: black;
+    color: white;
+    width: 100%;
+    max-width: 200px;
+}
+
+.boton-compra:hover {
+    background-color: #e62e6b;
+}
+
 
 h2 span {
     font-weight: bold;
     font-family: "Montserrat", sans-serif;
     color: #ff3b80;
 }
+/*
 
 /*  Botines Responsive */
 @media (max-width: 1200px) {
