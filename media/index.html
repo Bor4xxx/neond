@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100..900&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/x-icon" href="./media/Fav_icon-blanco.png">
+    <title>NEOND</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <!-- Cabecera -->
+    <header>
+        <div class="logo">
+            <a href="index.html">
+                <img src="./media/Logo_NEOND_blanco.png" alt="Logo NEOND">
+            </a>
+        </div>
+        <nav class="menu_navegacion">
+            <ul>
+                <div class="boton_color">
+                <li><a href="#experience">Xperience</a></li>
+                </div>
+                <div class="boton_color">
+                <li><a href="#productos">Productos</a></li>
+                </div>
+                <div class="boton_color">
+                <li><a href="#login">Inicia Sesión</a></li>
+                </div>
+                <div class="boton_color">
+                <li><a href="#carrito"><img 
+                    class="carro_de_compras" src="./media/carrito_decompras-03.png" width="30" height="30" alt="Carrito"></a></li>
+                </div>
+            </ul>
+        </nav>
+        
+    </header>
+    
+    <!-- Banner -->
+
+    <section class="banner">
+        <img src="./media/Banner NEOND.gif" alt="Banner Home">
+    </section>
+
+    <!-- Sección de Botines -->
+    <section class="botines">
+        <button id="productos" class="btn-morado" onclick="window.location.href='Botas_de_cesped.html'">
+            BOTA DE CÉSPED
+        </button>
+        <button class="btn-magenta" onclick="window.location.href='Botin_multitaco.html'">
+            BOTÍN MULTITACO
+        </button>
+    </section>
+    
+    <!-- Sección Xperience -->
+
+    <section id="experience" class="container">
+        <div class="text-block">
+            <h2 class="highlight">XPERIENCE</h2>
+            <h3 class="title">Al siguiente nivel!</h3>
+            <p class="description">Personaliza, innova y destaca en el campo.<br>
+                ¡Explora el futuro del fútbol ahora!</p>
+            <button class="btn">Conócenos</button>
+        </div>
+        <div class="imagen_de_apoyo">
+            <img src="./media/botines_gift.gif" alt="Bota de fútbol">
+        </div>
+        <div class="imagen_de_apoyo">
+            <img src="./media/Tienda_banner.png" alt="Interior de tienda">
+        </div>
+        <div class="text-block">
+            <h2 class="highlight">Tiendas</h2>
+            <h3 class="title">Visítanos!</h3>
+            <p class="description">Encuentra la mejor selección de botines y accesorios.<br>
+                ¡Ubica tu tienda más cercana y vive la experiencia!</p>
+            <button class="btn">Tienda</button>
+        </div>
+    </section>
+    
+    <!-- Footer -->
+
+    <footer>
+        <div class="footer-container">
+            <div class="footer-section">
+                <h3>NEOND Store</h3>
+                <a href="https://maps.app.goo.gl/TL8U7bPpWn94exdLA" target="_blank">Nuestra tienda</a>
+                <p>Teléfono: 865 616 65</p>
+                <a href="mailto:neon@info.com">neon@info.com</a>
+                <div class="social-media">
+                    <a href="https://www.instagram.com" target="_blank"><img src="./media/Instagram.png" alt="Instagram"></a>
+                    <a href="https://www.twitter.com" target="_blank"><img src="./media/X Twitter.png" alt="Twitter"></a>
+                    <a href="https://www.facebook.com" target="_blank"><img src="./media/Facebook.png" alt="Facebook"></a>
+                </div>
+            </div>
+            <div class="footer-section">
+                <h3>Productos</h3>
+                <p><a href="#">Botín césped</a></p>
+                <p><a href="#">Botín multitacos</a></p>
+            </div>
+            <div class="footer-section">
+                <h3>Suscríbete</h3>
+                <label for="email">Email</label>
+                <input type="email" id="email" placeholder="Tu correo aquí">
+                <button class="subscribe-btn">SUSCRIBIRSE</button>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>Copyright 2025 NEOND_ design by <a href="#">@skirladesign</a></p>
+        </div>
+    </footer>
+    
+    <!-- Pop-up de Iniciar Sesión -->
+        
+    <div id="loginPopup" class="popup">
+        <div class="popup-content">
+            <span class="close">&times;</span>
+            <div class="popup-logo">
+                <img src="./media/Logo_NEOND_blanco.png" alt="adiClub Logo">
+            </div>
+            <img src="./media/Logo_NEOND_negro.png" alt="logo_pop_up">
+            <h2>LAS RECOMPENSAS NEOND TE ESPERAN</h2>
+            <p>Realiza pedidos sin gastos de envío, consigue códigos descuento y productos exclusivos en XPERIENCE.</p>
+            <p>Inicia sesión o regístrate. ¡Es Gratis!</p>
+            <button class="btn-apple"><img src="./media/logo_pop_apple.png" alt="Apple Logo"> Iniciar sesión con Apple</button>
+            <button class="btn-facebook"><img src="./media/logo_pop_facebook.png" alt="Facebook Logo"> Iniciar sesión con Facebook</button>
+            <button class="btn-google"><img src="./media/logo_pop_google.png" alt="Google Logo"> Iniciar sesión con Google</button>
+            <input type="email" placeholder="correo@electonico*">
+            <label>
+                <input type="checkbox"> Mantener sesión iniciada. Aplicable a todas las opciones.
+            </label>
+            <a href="#">Más información</a>
+            <button class="btn-continue">CONTINUAR</button>
+            <p>Al continuar, aceptas los <a href="#">términos y condiciones</a> y el <a href="#">aviso de privacidad</a>.</p>
+        </div>
+    </div>
+
+
+    <script>
+    
+        // Pop up
+        var popup = document.getElementById("loginPopup");
+
+        // Obtener el botón que abre el pop-up
+        var btn = document.querySelector("a[href='#login']");
+
+        // Obtener el elemento <span> que cierra el pop-up
+        var span = document.getElementsByClassName("close")[0];
+
+        // Cuando el usuario hace clic en el botón, se abre el pop-up
+        btn.onclick = function(event) {
+            event.preventDefault();
+            popup.style.display = "block";
+        }
+
+        // Cuando el usuario hace clic en <span> (x), se cierra el pop-up
+        span.onclick = function() {
+            popup.style.display = "none";
+        }
+
+        // fuera da click sale 
+        window.onclick = function(event) {
+            if (event.target == popup) {
+                popup.style.display = "none";
+            }
+        }
+    </script>
+</body>
+</html>
