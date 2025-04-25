@@ -1,18 +1,28 @@
 <!DOCTYPE html>
 <html lang="es">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100..900&display=swap" rel="stylesheet">
-    <link rel="icon" type="image/x-icon" href="./media/Fav_icon-blanco.png">
-    <title>NEOND</title>
-    <link rel="stylesheet" href="styles.css">
-</head>
+
+<!--:::::::::::::::::::::::::::::::::::::::::::::::-->
+<!--............... Header........................ -->
+<!--:::::::::::::::::::::::::::::::::::::::::::::::-->
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100..900&display=swap" rel="stylesheet">
+        <link rel="icon" type="image/x-icon" href="./media/Fav_icon-blanco.png">
+        <title>NEOND</title>
+        <link rel="stylesheet" href="styles.css">
+    </head>
+
 <body>
 
-    <!-- Cabecera -->
+<!--:::::::::::::::::::::::::::::::::::::::::::::::-->
+<!--........... Cabecera Menú .................... -->
+<!--:::::::::::::::::::::::::::::::::::::::::::::::-->
+
     <header>
         <div class="logo">
             <a href="index.html">
@@ -39,32 +49,47 @@
         
     </header>
     
-    <!-- Banner -->
+        <!--:::::::::::::::::::::::::::::::::::::::::::::::-->
+        <!--............... Banner ....................... -->
+        <!--:::::::::::::::::::::::::::::::::::::::::::::::-->
 
-    <section class="banner">
-        <img src="./media/Banner NEOND.gif" alt="Banner Home">
-    </section>
+        <section class="banner-video">
+            <video autoplay muted loop playsinline>
+              <source src="./media/Banner_NEOND.mp4" type="video/mp4">
+            </video>
+            <div class="overlay-text">
+              <img src="./media/Logo_NEOND_blanco.png" alt="Logo NEOND" class="overlay-logo">
+              <h1>N E X T  L E V E L </h1>
+            </div>
+          </section>          
+          
 
-    <!-- Sección de Botines -->
-    <section class="botines">
-        <button id="productos" class="btn-morado" onclick="window.location.href='Botas_de_cesped.html'">
-            BOTA DE CÉSPED
-        </button>
-        <button class="btn-magenta" onclick="window.location.href='Botin_multitaco.html'">
-            BOTÍN MULTITACO
-        </button>
-    </section>
+        <!--:::::::::::::::::::::::::::::::::::::::::::::::-->
+        <!--........... Botones Principales .............. -->
+        <!--:::::::::::::::::::::::::::::::::::::::::::::::-->
+
+
+        <section class="botines">
+            <button id="productos" class="btn-morado" onclick="window.location.href='Botas_de_cesped.html'">
+                BOTA DE CÉSPED
+            </button>
+            <button class="btn-magenta" onclick="window.location.href='Botin_multitaco.html'">
+                BOTÍN MULTITACO
+            </button>
+        </section>
     
-    <!-- Sección Xperience -->
+    <!--:::::::::::::::::::::::::::::::::::::::::::::::-->
+    <!--............... Seccion Xperience ............ -->
+    <!--:::::::::::::::::::::::::::::::::::::::::::::::-->
 
     <section id="experience" class="container">
         <div class="text-block">
             <h2 class="highlight">XPERIENCE</h2>
-            <h3 class="title">Al siguiente nivel!</h3>
+            <h3 class="title">Next level!</h3>
             <p class="description">Personaliza, innova y destaca en el campo.<br>
                 ¡Explora el futuro del fútbol ahora!</p>
-            <button class="btn">Conócenos</button>
-        </div>
+                <a class="btn enlace-conocenos" href="./Xperience.html" target="_blank">Conócenos</a>
+            </div>
         <div class="imagen_de_apoyo">
             <img src="./media/botines_gift.gif" alt="Bota de fútbol">
         </div>
@@ -72,15 +97,51 @@
             <img src="./media/Tienda_banner.png" alt="Interior de tienda">
         </div>
         <div class="text-block">
-            <h2 class="highlight">Tiendas</h2>
+            <h2 class="highlight">NEOND STORE</h2>
             <h3 class="title">Visítanos!</h3>
             <p class="description">Encuentra la mejor selección de botines y accesorios.<br>
                 ¡Ubica tu tienda más cercana y vive la experiencia!</p>
-            <button class="btn">Tienda</button>
+                <a class="btn enlace-conocenos" href="./Tienda.html" target="_blank">Tienda</a>
+
         </div>
     </section>
+
+    <!--:::::::::::::::::::::::::::::::::::::::::::::::-->
+    <!--............... Testimonios................... -->
+    <!--:::::::::::::::::::::::::::::::::::::::::::::::-->
+
+
+    <section class="seccion-testimonios">
+            <div class="tarjeta" style="background-color:#ffffff;">
+            <img class="foto" src="./media/padre_1_kloop.png" alt="Foto de Nat">
+            <p class="texto">❝ Mis 3 hijos los tienen en sus entrenamientos y son estupendos❞</p>
+            <h3 class="nombre">Jürgen Klopp </h3>
+            <p class="cargo">Entrenador Liverpool</p>
+            </div>
+            <div class="tarjeta" style="background-color: #ffffff;">
+            <img class="foto" src="./media/padre_1_guardiola.png" alt="Foto de Celia">
+            <p class="texto">❝ Madre mia son los mejores, mis nietos los usan son lo mejor❞</p>
+            <h3 class="nombre">Felipe Guardiola</h3>
+            <p class="cargo">Entrenador de FCB</p>
+            </div>
+            <div class="tarjeta" style="background-color: #ffffff;">
+            <img class="foto" src="./media/padre_1_ballo.png" alt="Foto de Bob">
+            <p class="texto">❝ En senegal los usamos con los chicos y duran un montòn❞</p>
+            <h3 class="nombre">Mario Balotelli</h3>
+            <p class="cargo">Dt de sub 17</p>
+            </div>
+            <div class="tarjeta" style="background-color: #ffffff;">
+            <img class="foto" src="./media/padre_1_flick.png" alt="Foto de Mattie">
+            <p class="texto">❝Los vì y dije estos tiene estilo❞</p>
+            <h3 class="nombre">Hans-Dieter Flick</h3>
+            <p class="cargo">Dt. del FCB Mayores</p>
+            </div>
+      </section>
     
-    <!-- Footer -->
+    
+    <!--:::::::::::::::::::::::::::::::::::::::::::::::-->
+    <!--............... Footer........................ -->
+    <!--:::::::::::::::::::::::::::::::::::::::::::::::-->
 
     <footer>
         <div class="footer-container">
@@ -112,60 +173,131 @@
         </div>
     </footer>
     
-    <!-- Pop-up de Iniciar Sesión -->
-        
-    <div id="loginPopup" class="popup">
-        <div class="popup-content">
-            <span class="close">&times;</span>
-            <div class="popup-logo">
-                <img src="./media/Logo_NEOND_blanco.png" alt="adiClub Logo">
+<!--:::::::::::::::::::::::::::::::::::::::::::::::-->
+<!--........ Pop up de inicio de sesion .......... -->
+<!--:::::::::::::::::::::::::::::::::::::::::::::::-->
+                
+            <div id="loginPopup" class="popup">
+                <div class="popup-content">
+                    <span class="close">&times;</span>
+                    <div class="popup-logo">
+                        <img src="./media/Logo_NEOND_blanco.png" alt="adiClub Logo">
+                    </div>
+                    <img src="./media/Logo_NEOND_negro.png" alt="logo_pop_up">
+                    <h2>LAS RECOMPENSAS NEOND TE ESPERAN</h2>
+                    <p>Realiza pedidos sin gastos de envío, consigue códigos descuento y productos exclusivos en XPERIENCE.</p>
+                    <p>Inicia sesión o regístrate. ¡Es Gratis!</p>
+                    <button class="btn-apple"><img src="./media/logo_pop_apple.png" alt="Apple Logo"> Iniciar sesión con Apple</button>
+                    <button class="btn-facebook"><img src="./media/logo_pop_facebook.png" alt="Facebook Logo"> Iniciar sesión con Facebook</button>
+                    <button class="btn-google"><img src="./media/logo_pop_google.png" alt="Google Logo"> Iniciar sesión con Google</button>
+                    <input type="email" placeholder="correo@electonico*">
+                    <label>
+                        <input type="checkbox"> Mantener sesión iniciada. Aplicable a todas las opciones.
+                    </label>
+                    <a href="#">Más información</a>
+                    <button class="btn-continue">CONTINUAR</button>
+                    <p>Al continuar, aceptas los <a href="#">términos y condiciones</a> y el <a href="#">aviso de privacidad</a>.</p>
+                </div>
             </div>
-            <img src="./media/Logo_NEOND_negro.png" alt="logo_pop_up">
-            <h2>LAS RECOMPENSAS NEOND TE ESPERAN</h2>
-            <p>Realiza pedidos sin gastos de envío, consigue códigos descuento y productos exclusivos en XPERIENCE.</p>
-            <p>Inicia sesión o regístrate. ¡Es Gratis!</p>
-            <button class="btn-apple"><img src="./media/logo_pop_apple.png" alt="Apple Logo"> Iniciar sesión con Apple</button>
-            <button class="btn-facebook"><img src="./media/logo_pop_facebook.png" alt="Facebook Logo"> Iniciar sesión con Facebook</button>
-            <button class="btn-google"><img src="./media/logo_pop_google.png" alt="Google Logo"> Iniciar sesión con Google</button>
-            <input type="email" placeholder="correo@electonico*">
-            <label>
-                <input type="checkbox"> Mantener sesión iniciada. Aplicable a todas las opciones.
-            </label>
-            <a href="#">Más información</a>
-            <button class="btn-continue">CONTINUAR</button>
-            <p>Al continuar, aceptas los <a href="#">términos y condiciones</a> y el <a href="#">aviso de privacidad</a>.</p>
+
+
+<!--:::::::::::::::::::::::::::::::::::::::::::::::-->
+<!--.......... Barra de cookies NEOND .............-->
+<!--:::::::::::::::::::::::::::::::::::::::::::::::-->
+
+
+        <div id="cookie-bar" class="cookie-bar">
+            <p>Usamos cookies para mejorar tu experiencia. <button onclick="togglePopup('popup-cookies')">Configurar</button> | <button onclick="togglePopup('popup-privacidad')">Privacidad</button> | <button onclick="togglePopup('popup-terminos')">Términos</button> | <button onclick="togglePopup('popup-aviso')">Aviso Legal</button> <button class="accept" onclick="acceptCookies()">Aceptar</button></p>
         </div>
-    </div>
+        
+        <!-- Pop-up: Configuración de Cookies -->
 
+        <div id="popup-cookies" class="popup">
+            <div class="popup-content">
+            <span class="close" onclick="togglePopup('popup-cookies')">&times;</span>
+            <h2>Configuración de Cookies</h2>
+            <p>Aquí podrás activar o desactivar el uso de cookies analíticas, de sesión y publicitarias.</p>
+            </div>
+        </div>
+        
+        <!-- Pop-up: Aviso de Privacidad -->
 
-    <script>
-    
-        // Pop up
-        var popup = document.getElementById("loginPopup");
+        <div id="popup-privacidad" class="popup">
+            <div class="popup-content">
+            <span class="close" onclick="togglePopup('popup-privacidad')">&times;</span>
+            <h2>Aviso de Privacidad</h2>
+            <p>Responsable: NEOND SL. Datos tratados: nombre, email, dirección, teléfono. Finalidad: gestión de pedidos y comunicaciones. Puedes ejercer tus derechos escribiendo a hola@neond.es</p>
+            </div>
+        </div>
+        
+        <!-- Pop-up: Términos y condiciones -->
 
-        // Obtener el botón que abre el pop-up
-        var btn = document.querySelector("a[href='#login']");
+        <div id="popup-terminos" class="popup">
+            <div class="popup-content">
+            <span class="close" onclick="togglePopup('popup-terminos')">&times;</span>
+            <h2>Términos y Condiciones</h2>
+            <p>Incluye: condiciones de compra, devoluciones, garantía y formas de pago. Consulta el aviso legal completo en NEOND.ES.</p>
+            </div>
+        </div>
+        
+        <!-- Pop-up: Aviso Legal completo -->
 
-        // Obtener el elemento <span> que cierra el pop-up
-        var span = document.getElementsByClassName("close")[0];
+        <div id="popup-aviso" class="popup">
+            <div class="popup-content">
+            <span class="close" onclick="togglePopup('popup-aviso')">&times;</span>
+            <h2>Aviso Legal</h2>
+            <p>Con el fin de cumplir con la legalidad vigente y otorgar seguridad y confianza a todos sus usuarios, les informamos, en virtud de la Ley 34/2002 de Servicios de la Sociedad de la Información y de Comercio Electrónico, que esta página Web es propiedad de NEOND.ES, denominación comercial bajo la que actúa NEOND SL con CIF B12000000 y domicilio en Polígono industrial colador, 100 Onda 12200 Castellón e inscrita en el Registro Mercantil de Castellón.</p>
+            <p>La tienda online NEOND.ES se dedica a la venta de botas de fútbol infantiles con un diseño futurista e innovador. Todos los contenidos de esta web, incluyendo textos, imágenes, logotipos, marcas, y cualquier otro material, son propiedad de NEOND SL o de sus licenciantes, estando protegidos por derechos de propiedad intelectual.</p>
+            <p>NEOND SL no se hace responsable de los daños derivados de la utilización de los contenidos de esta web, ni de los errores u omisiones en los mismos. Esta web puede incluir enlaces a sitios de terceros, cuya responsabilidad es ajena a NEOND SL.</p>
+            <p>Para más información, contacta a hola@neond.es</p>
+            </div>
+        </div>
+  
 
-        // Cuando el usuario hace clic en el botón, se abre el pop-up
-        btn.onclick = function(event) {
-            event.preventDefault();
-            popup.style.display = "block";
-        }
+<!--:::::::::::::::::::::::::::::::::::::::::::::::-->
+<!--............ Funcion en JavaScrip .............-->
+<!--:::::::::::::::::::::::::::::::::::::::::::::::-->
+            
+            <script>
+            
+                // Pop up
+                var popup = document.getElementById("loginPopup");
 
-        // Cuando el usuario hace clic en <span> (x), se cierra el pop-up
-        span.onclick = function() {
-            popup.style.display = "none";
-        }
+                // Obtener el botón que abre el pop-up
+                var btn = document.querySelector("a[href='#login']");
 
-        // fuera da click sale 
-        window.onclick = function(event) {
-            if (event.target == popup) {
-                popup.style.display = "none";
-            }
-        }
-    </script>
+                // Obtener el elemento <span> que cierra el pop-up
+                var span = document.getElementsByClassName("close")[0];
+
+                // Cuando el usuario hace clic en el botón, se abre el pop-up
+                btn.onclick = function(event) {
+                    event.preventDefault();
+                    popup.style.display = "block";
+                }
+
+                // Cuando el usuario hace clic en <span> (x), se cierra el pop-up
+                span.onclick = function() {
+                    popup.style.display = "none";
+                }
+
+                // fuera da click sale 
+                window.onclick = function(event) {
+                    if (event.target == popup) {
+                        popup.style.display = "none";
+                    }
+                }
+            </script>
+
+            <!-- JavaScript -->
+
+            <script>
+                function togglePopup(id) {
+                const popup = document.getElementById(id);
+                popup.style.display = (popup.style.display === 'block') ? 'none' : 'block';
+                }
+                function acceptCookies() {
+                document.getElementById('cookie-bar').style.display = 'none';
+                }
+            </script>
 </body>
 </html>

@@ -16,7 +16,7 @@ header {
 }
 
 .logo img {
-    max-width: 150px 150px;
+    max-width: 120px 120px;
 }
 
 .carro_de_compras {
@@ -24,31 +24,64 @@ header {
 }
     
 /* Sección de botines */
+
 .botines {
-    display: flex;
-    justify-content: space-around;
-    padding: 80px;
-    background: #ff3b80;
-    
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 40px;
+  padding: 60px 20px;
+  background-color: #ff0059;
 }
+
 
 .botines p {
     font-size: 18px;
     font-family: "Montserrat", sans-serif;
     margin: 10px 0;
+    text-align: center;
 }
 
-.botin {
-    text-align: center;
-    width: 40%;
+.botines h1{
+    font-size: 24px;
+    letter-spacing: 3px;
+    font-family: "Montserrat", sans-serif;
+    font-weight: bold;
 }
+
+/*DIV de secciones de botines */
+
+.botin {
+    width: 100%;
+    max-width: 300px;
+    border-radius: 15px;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    box-shadow: 0 0 40px #50001c;
+    transition: transform 0.5s ease;
+  }
+  
+
 
 .botin img {
     width: 100%;
     max-width: 630px;
 }
 
+.botin {
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
+  }
+  
+  .botin:hover {
+    transform: translateY(-10px) scale(1.03);
+    box-shadow: 0 10px 30px rgba(255, 255, 255, 0.15);
+  }
+  
+
 /* Estilos para los botones */
+
 .boton {
     display: inline-block;
     background: black;

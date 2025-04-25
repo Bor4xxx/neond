@@ -1,28 +1,38 @@
 <!DOCTYPE html>
 <html lang="es">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100..900&display=swap" rel="stylesheet">
-    <link rel="icon" type="image/x-icon" href="./media/Fav_icon-blanco.png">
-    <title>NEOND - Multitato</title>
-    <link rel="stylesheet" href="styles.css">
-    <link rel="stylesheet" href="botin_multitaco.css">
-</head>
+
+<!--:::::::::::::::::::::::::::::::::::::::::::::::-->
+<!--............... Header........................ -->
+<!--:::::::::::::::::::::::::::::::::::::::::::::::-->
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100..900&display=swap" rel="stylesheet">
+        <link rel="icon" type="image/x-icon" href="./media/Fav_icon-blanco.png">
+        <title>NEOND - Multitaco</title>
+        <link rel="stylesheet" href="styles.css">
+        <link rel="stylesheet" href="botin_multitaco.css">
+    </head>
+    
 <body>
-     <!-- Cabecera -->
-     <header>
-        <div class="logo">
-            <a href="index.html">
-                <img src="./media/Logo_NEOND_blanco.png" alt="Logo NEOND">
-            </a>
-        </div>
+
+<!--:::::::::::::::::::::::::::::::::::::::::::::::-->
+<!--.................. Cabecera .................. -->
+<!--:::::::::::::::::::::::::::::::::::::::::::::::-->
+
+<header>
+    <div class="logo">
+        <a href="index.html">
+            <img src="./media/Logo_NEOND_blanco.png" alt="Logo NEOND">
+        </a>
+    </div>
         <nav class="menu_navegacion">
             <ul>
                 <div class="boton_color">
-                <li><a href="#experience">Xperience</a></li>
+                <li><a href="./Xperience.html">Xperience</a></li>
                 </div>
                 <div class="boton_color">
                 <li><a href="#generation">Multitaco</a></li>
@@ -36,151 +46,179 @@
                 </div>
             </ul>
         </nav>
-    </header>
+</header>
 
-    <!-- Sección de botines -->
-    <section class="botines">
-        <div class="botin" id="botin1">
-            <img id="generation" src="./media/Generation_yellow_bottom.png" alt="Botín 1">
-            <p>Para los que inician con la pasión del fútbol</p>
-            <a href="#seccion-botin1" class="boton">G-YELLOW</a>
-        </div>
-        <div class="botin" id="botin2">
-            <img src="./media/Generation_green_bottom.png" alt="Botín 2">
-            <p>Durabilidad y destacar en cancha.</p>
-            <a href="#seccion-botin2" class="boton">G-GREEN II</a>
-        </div>
-        <div class="botin" id="botin3">
-            <img src="./media/Generation_blue_bottom.png" alt="Botín 3">
-            <p>Tecnología avanzada y diseño premium</p>
-            <a href="#seccion-botin3" class="boton">G-BLUE</a>
-        </div>
-    </section>
+    <!--:::::::::::::::::::::::::::::::::::::::::::::::-->
+    <!--............ Seccion de botines .............. -->
+    <!--:::::::::::::::::::::::::::::::::::::::::::::::-->
 
-    <!-- Secciones de información de botines -->
-    <section class="info" id="seccion-botin1">
-        <div class="imagen">
-            <img src="./media/G-Yellow_section.png" alt="Imagen Botín G-ONE">
-        </div>
-        <div class="texto">
-            <h2>NEOND <span>YELLOW</span></h2>
-            <h3>Campo de césped artificial</h3>
-            <p>Tacos medianos y equilibrados (AG - Artificial Ground) para tracción adecuada.</p> 
-            <h3>Amortiguación y comodidad</h3>
-            <p>Tacos cortos y densos (TF - Turf) para durabilidad superior.</p>
-            <h3>Ajuste perfecto</h3> 
-            <p>Planas o con pequeños tacos (TF - Turf) para estabilidad en superficies duras.</p>
+        <section class="botines">
+            <div class="botin" id="botin1">
+                <img id="generation" src="./media/Generation_yellow_bottom.png" alt="Botín 1">
+                <p>Para los que inician con la <br> pasión del fútbol</p>
+               <h1 class="precio">45.00€</h1>
+                <a href="#seccion-botin1" class="boton">G-YELLOW</a>
+            </div>
+            <div class="botin" id="botin2">
+                <img src="./media/Generation_green_bottom.png" alt="Botín 2">
+                <p>Durabilidad, control y <br>destacar en cancha.</p>
+                <h1 class="precio">60.00€</h1>
+                <a href="#seccion-botin2" class="boton">G-GREEN II</a>
+            </div>
+            <div class="botin" id="botin3">
+                <img src="./media/Generation_blue_bottom.png" alt="Botín 3">
+                <p>Tecnología avanzada y confort premium de NEOND</p>
+                <h1 class="precio">75.00€</h1>
+                <a href="#seccion-botin3" class="boton">G-BLUE</a>
+            </div>
+        </section>
 
-             <!-- Selector de talla -->
-             <label for="talla-botin">Selecciona tu talla:</label>
-             <select id="talla-botin" class="talla-select">
-                 <option value="20">20</option>
-                 <option value="21">21</option>
-                 <option value="24">24</option>
-                 <option value="25">25</option>
-                 <option value="31">31</option>
-                 <option value="32">32</option>
-                 <option value="33">33</option>
-                 <option value="34">34</option>
-                 <option value="35">35</option>
-             </select>
- 
-             <!-- Botón de compra -->
+    <!--:::::::::::::::::::::::::::::::::::::::::::::::-->
+    <!--............ Seccion Info Yellow...............-->
+    <!--:::::::::::::::::::::::::::::::::::::::::::::::-->
+
+        <section class="info" id="seccion-botin1">
+            <div class="imagen">
+                <img src="./media/G-Yellow_section.png" alt="Imagen Botín G-ONE">
+            </div>
+
+            <div class="texto">
+                <h2>NEOND <span>YELLOW</span></h2>
+                <h3>Campo de césped artificial</h3>
+                <p>Tacos medianos y equilibrados (AG - Artificial Ground) para tracción adecuada.</p> 
+                <h3>Amortiguación y comodidad</h3>
+                <p>Tacos cortos y densos (TF - Turf) para durabilidad superior.</p>
+                <h3>Ajuste perfecto</h3> 
+                <p>Planas o con pequeños tacos (TF - Turf) para estabilidad en superficies duras.</p>
+
+                <!-- Selector de talla Yellow -->
+
+                <label for="talla-botin">Selecciona tu talla:</label>
+                <select id="talla-botin" class="talla-select">
+                    <option value="20">20</option>
+                    <option value="21">21</option>
+                    <option value="24">24</option>
+                    <option value="25">25</option>
+                    <option value="31">31</option>
+                    <option value="32">32</option>
+                    <option value="33">33</option>
+                    <option value="34">34</option>
+                    <option value="35">35</option>
+                    </select>
+                <button class="boton-compra">Comprar Ahora</button>
+            </div>
+        </section>
+
+    <!--:::::::::::::::::::::::::::::::::::::::::::::::-->
+    <!--............ Seccion Green  II... ............ -->
+    <!--:::::::::::::::::::::::::::::::::::::::::::::::-->
+
+        <section class="info" id="seccion-botin2">
+            <div class="imagen">
+                <img src="./media/G-Green II_section.png" alt="Imagen Botín G-GREEN">
+            </div>
+
+            <div class="texto">
+                <h2>NEOND <span>G-GREEN II</span></h2>
+                <h3>Cancha de césped natural.</h3> 
+                <p>Tacos largos y espaciados (FG - Firm Ground) para rendimiento superior.</p>
+                <h3>Amortiguación y comodidad</h3> 
+                <p>Tacos cortos y densos (AG - Artificial Ground) para mayor amortiguación.</p>
+                <h3>Ajuste perfecto</h3> 
+                <p>Pequeños tacos (TF - Turf) para estabilidad en cualquier superficie.</p>
+
+                <!-- Boton de talla G Green II -->
+
+                <label size for="talla-botin"> <span>Selecciona tu talla:</span></label>
+                <select id="talla-botin" class="talla-select">
+                    <option value="20">20</option>
+                    <option value="21">21</option>
+                    <option value="22">22</option>
+                    <option value="23">23</option>
+                    <option value="24">24</option>
+                    <option value="25">25</option>
+                    <option value="26">26</option>
+                    <option value="27">27</option>
+                    <option value="28">28</option>
+                    <option value="29">29</option>
+                    <option value="30">30</option>
+                </select>
+
+                 <!-- Botón de compra -->
+
              <button class="boton-compra">Comprar Ahora</button>
-        </div>
-    </section>
-
-    <section class="info" id="seccion-botin2">
-        <div class="imagen">
-            <img src="./media/G-Green II_section.png" alt="Imagen Botín G-GREEN">
-        </div>
-        <div class="texto">
-            <h2>NEOND <span>G-GREEN II</span></h2>
-            <h3>Cancha de césped natural.</h3> 
-            <p>Tacos largos y espaciados (FG - Firm Ground) para rendimiento superior.</p>
-            <h3>Amortiguación y comodidad</h3> 
-            <p>Tacos cortos y densos (AG - Artificial Ground) para mayor amortiguación.</p>
-            <h3>Ajuste perfecto</h3> 
-            <p>Pequeños tacos (TF - Turf) para estabilidad en cualquier superficie.</p>
-
-             <!-- Selector de talla -->
-             <label size for="talla-botin"> <span>Selecciona tu talla:</span></label>
-             <select id="talla-botin" class="talla-select">
-                 <option value="20">20</option>
-                 <option value="21">21</option>
-                 <option value="22">22</option>
-                 <option value="23">23</option>
-                 <option value="24">24</option>
-                 <option value="25">25</option>
-                 <option value="26">26</option>
-                 <option value="27">27</option>
-                 <option value="28">28</option>
-                 <option value="29">29</option>
-                 <option value="30">30</option>
-             </select>
- 
-             <!-- Botón de compra -->
-             <button class="boton-compra">Comprar Ahora</button>
-        </div>
-    </section>
-
-    <section class="info" id="seccion-botin3">
-        <div class="imagen">
-            <img src="./media/G-BLUE_section.png" alt="Imagen Botín G-GOLD">
-        </div>
-        <div class="texto">
-            <h2>NEOND <span>G-BLUE</span></h2>
-            <h3>Material del empeine</h3>
-            <p>Tacos largos y espaciados (FG - Firm Ground) para agarre excepcional.</p>
-            <h3>Amortiguación y comodidad</h3>
-            <p>Tacos cortos y densos (AG - Artificial Ground) para protección avanzada.</p>
-            <h3>Ajuste perfecto</h3>
-            <p>Pequeños tacos (TF - Turf) para máxima estabilidad.</p>
-
-            <!-- Selector de talla -->
-            <label for="talla-botin">Selecciona tu talla:</label>
-            <select id="talla-botin" class="talla-select">
-                <option value="20">20</option>
-                <option value="21">21</option>
-                <option value="22">22</option>
-                <option value="23">23</option>
-                <option value="24">24</option>
-                <option value="25">25</option>
-                <option value="26">26</option>
-                <option value="27">27</option>
-            </select>
-
-            <!-- Botón de compra -->
-            <button class="boton-compra">Comprar Ahora</button>
-        </div>
-    </section>
-
-    <!-- Footer -->
-    <footer>
-        <div class="footer-container">
-            <div class="footer-section">
-                <h3>NEOND Store</h3>
-                <a href="https://maps.app.goo.gl/TL8U7bPpWn94exdLA" target="_blank">Nuestra tienda</a>
-                <p>Teléfono: 865 616 65</p>
-                <a href="mailto:neon@info.com">neon@info.com</a>
             </div>
-            <div class="footer-section">
-                <h3>Productos</h3>
-                <p><a href="./Botas_de_cesped.html">Botín césped</a></p>
-                <p><a href="./Botin_multitaco.html">Botín multitacos</a></p>
-            </div>
-            <div class="footer-section">
-                <h3>Suscríbete</h3>
-                <input type="email" id="email" placeholder="Tu correo aquí">
-                <button class="subscribe-btn">SUSCRIBIRSE</button>
-            </div>
-        </div>
-        <div class="footer-bottom">
-            <p>Copyright 2025 NEOND_ design by <a href="#">@skirladesign</a></p>
-        </div>
-    </footer>
+        </section>
 
-    <!-- Pop-up de Iniciar Sesión -->
+    <!--:::::::::::::::::::::::::::::::::::::::::::::::-->
+    <!--............ Seccion G Blue................... -->
+    <!--:::::::::::::::::::::::::::::::::::::::::::::::-->
+
+        <section class="info" id="seccion-botin3">
+            <div class="imagen">
+                <img src="./media/G-BLUE_section.png" alt="Imagen Botín G-GOLD">
+            </div>
+
+            <div class="texto">
+                <h2>NEOND <span>G-BLUE</span></h2>
+                <h3>Material del empeine</h3>
+                <p>Tacos largos y espaciados (FG - Firm Ground) para agarre excepcional.</p>
+                <h3>Amortiguación y comodidad</h3>
+                <p>Tacos cortos y densos (AG - Artificial Ground) para protección avanzada.</p>
+                <h3>Ajuste perfecto</h3>
+                <p>Pequeños tacos (TF - Turf) para máxima estabilidad.</p>
+
+                <!-- Selector de talla G Blue -->
+                
+                <label for="talla-botin">Selecciona tu talla:</label>
+                <select id="talla-botin" class="talla-select">
+                    <option value="20">20</option>
+                    <option value="21">21</option>
+                    <option value="22">22</option>
+                    <option value="23">23</option>
+                    <option value="24">24</option>
+                    <option value="25">25</option>
+                    <option value="26">26</option>
+                    <option value="27">27</option>
+                </select>
+
+                <!-- Botón de compra -->
+
+                <button class="boton-compra">Comprar Ahora</button>
+            </div>
+        </section>
+
+    <!--:::::::::::::::::::::::::::::::::::::::::::::::-->
+    <!--................... Footer.....................-->
+    <!--:::::::::::::::::::::::::::::::::::::::::::::::-->
+
+        <footer>
+            <div class="footer-container">
+                <div class="footer-section">
+                    <h3>NEOND Store</h3>
+                    <a href="https://maps.app.goo.gl/TL8U7bPpWn94exdLA" target="_blank">Nuestra tienda</a>
+                    <p>Teléfono: 865 616 65</p>
+                    <a href="mailto:neon@info.com">neon@info.com</a>
+                </div>
+                <div class="footer-section">
+                    <h3>Productos</h3>
+                    <p><a href="./Botas_de_cesped.html">Botín césped</a></p>
+                    <p><a href="./Botin_multitaco.html">Botín multitacos</a></p>
+                </div>
+                <div class="footer-section">
+                    <h3>Suscríbete</h3>
+                    <input type="email" id="email" placeholder="Tu correo aquí">
+                    <button class="subscribe-btn">SUSCRIBIRSE</button>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>Copyright 2025 NEOND_ design by <a href="#">@skirladesign</a></p>
+            </div>
+        </footer>
+
+    <!--:::::::::::::::::::::::::::::::::::::::::::::::-->
+    <!--............ Pop Up iniciar sesion .............-->
+    <!--:::::::::::::::::::::::::::::::::::::::::::::::-->
         
     <div id="loginPopup" class="popup">
         <div class="popup-content">
@@ -205,34 +243,38 @@
         </div>
     </div>
 
+    <!--:::::::::::::::::::::::::::::::::::::::::::::::-->
+    <!--............ Funcion en JavaScrip .............-->
+    <!--:::::::::::::::::::::::::::::::::::::::::::::::-->
 
-    <script>
-        // Obtener el pop-up
-        var popup = document.getElementById("loginPopup");
+        <script>
+            // Obtener el pop-up
+            var popup = document.getElementById("loginPopup");
 
-        // Obtener el botón que abre el pop-up
-        var btn = document.querySelector("a[href='#login']");
+            // Obtener el botón que abre el pop-up
+            var btn = document.querySelector("a[href='#login']");
 
-        // Obtener el elemento <span> que cierra el pop-up
-        var span = document.getElementsByClassName("close")[0];
+            // Obtener el elemento <span> que cierra el pop-up
+            var span = document.getElementsByClassName("close")[0];
 
-        // Cuando el usuario hace clic en el botón, se abre el pop-up
-        btn.onclick = function(event) {
-            event.preventDefault();
-            popup.style.display = "block";
-        }
+            // Cuando el usuario hace clic en el botón, se abre el pop-up
+            btn.onclick = function(event) {
+                event.preventDefault();
+                popup.style.display = "block";
+            }
 
-        // Cuando el usuario hace clic en <span> (x), se cierra el pop-up
-        span.onclick = function() {
-            popup.style.display = "none";
-        }
-
-        // Cuando el usuario hace clic fuera del pop-up, se cierra el pop-up
-        window.onclick = function(event) {
-            if (event.target == popup) {
+            // Cuando el usuario hace clic en <span> (x), se cierra el pop-up
+            span.onclick = function() {
                 popup.style.display = "none";
             }
-        }
-    </script>
+
+            // Cuando el usuario hace clic fuera del pop-up, se cierra el pop-up
+            window.onclick = function(event) {
+                if (event.target == popup) {
+                    popup.style.display = "none";
+                }
+            }
+        </script>
+
 </body>
 </html>

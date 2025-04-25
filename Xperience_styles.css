@@ -1,0 +1,187 @@
+.seccion-valores-final {
+	background-color: #D60B52;
+	padding: 4rem;
+	color: white;
+	font-family: 'Montserrat', sans-serif;
+    font-weight: bold; 
+	
+  }
+  
+  .contenedor-valores-final {
+	font-family: 'Montserrat' sans-serif;
+	font-weight: lighter;
+	display: flex;
+	flex-wrap: wrap;
+	align-items: center;
+	justify-content: center;
+	gap: 3rem;
+	max-width: 1200px;
+	margin: auto;
+  }
+  
+  .imagen-valores-final img {
+	max-width: 500px;
+	width: 100%;
+	height: auto;
+	display: block;
+	float: left;
+  }
+  
+  .texto-valores-final {
+	max-width: 500px;
+  }
+  
+  .texto-valores-final h1 {
+	font-size: 2rem;
+	margin-bottom: 1rem;
+	color: white;
+  }
+  
+  .texto-valores-final p {
+	float: left;
+	font-size: 1rem;
+	line-height: 1.7;
+	color: white;
+	margin-bottom: 1rem;
+  }
+  
+  @media (max-width: 768px) {
+	.contenedor-valores-final {
+	  flex-direction: column;
+	  text-align: center;
+	}
+  
+	.texto-valores-final {
+	  max-width: 90%;
+	}
+  }
+
+  /*Seccion de los desafio finales */
+
+  .galeria-desafios {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+	gap: 2rem;
+	padding: 3rem 1.5rem;
+	background-color: #0a0a0a;
+	font-family: 'Montserrat', sans-serif;
+  }
+  
+  .tarjeta-desafio {
+	background-color: #1c1c1c;
+	border-radius: 12px;
+	padding: 1.5rem;
+	max-width: 300px;
+	text-align: center;
+	color: white;
+	transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  
+  .tarjeta-desafio:hover {
+	transform: translateY(-5px);
+	box-shadow: 0 0 12px #D60B52;
+  }
+  
+  .imagen-desafio {
+	width: 100%;
+	height: auto;
+	border-radius: 8px;
+	margin-bottom: 1rem;
+  }
+  
+  .titulo-desafio {
+	font-size: 1.2rem;
+	margin-bottom: 0.5rem;
+	color: #ffffff;
+  }
+  
+  .descripcion-desafio {
+	font-size: 0.95rem;
+	margin-bottom: 1rem;
+	color: #ccc;
+  }
+  
+  .boton-desafio {
+	background-color: #D60B52;
+	border: none;
+	padding: 0.6rem 1.2rem;
+	border-radius: 6px;
+	font-weight: bold;
+	cursor: pointer;
+	color: #000;
+	transition: background 0.3s;
+  }
+  
+  .boton-desafio:hover {
+	background-color: #9d00ff;
+  }
+  
+  /* Responsive */
+  @media (max-width: 768px) {
+	.tarjeta-desafio {
+	  width: 90%;
+	}
+  }
+
+  /*Seccion de entrevistas Endrik */
+
+  .entrevista-neond {
+	background-color: #662d91; 
+	color: white;
+	padding: 4rem 2rem;
+	font-family: 'Montserrat', sans-serif;
+	
+  }
+  
+  .contenedor-entrevista {
+	display: flex;
+	flex-wrap: wrap;
+	align-items: center;
+	justify-content: center;
+	max-width: 1200px;
+	margin: auto;
+	gap: 3rem;
+  }
+  
+  .imagen-entrevista img {
+	width: 100%;
+	max-width: 400px;
+	border-radius: 10px;
+	display: block;
+  }
+  
+  .texto-entrevista {
+	max-width: 600px;
+  }
+  
+  .texto-entrevista h2 {
+	font-family: 'Montserrat', sans-serif;
+	font-size: 1.8rem;
+	margin-bottom: 1.5rem;
+	font-weight: 700;
+  }
+  
+  .texto-entrevista p {
+	font-size: 1rem;
+	line-height: 1.7;
+	margin-bottom: 1rem;
+	color: #fff;
+  }
+  
+  .texto-entrevista strong {
+	font-family: 'Montserrat', sans-serif;
+	color: white;
+  }
+  
+  /* Responsive */
+  @media (max-width: 768px) {
+	.contenedor-entrevista {
+	  flex-direction: column;
+	  text-align: center;
+	}
+  
+	.texto-entrevista {
+	  max-width: 90%;
+	}
+  }
