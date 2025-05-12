@@ -16,6 +16,10 @@ header {
     background-color: #000;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 .logo img {
     max-width: 120px 120px;
 }
@@ -207,7 +211,10 @@ header {
   font-size: 14px;
   margin-bottom: 10px;
 }
-
+span {
+  font-size: 20px;
+  font-weight: bold;
+}
 .tallas-header {
   display: flex;
   justify-content: space-between;
@@ -231,7 +238,7 @@ header {
   cursor: pointer;
 }
 
-/* FUNCION EN JAVASCRIPT QUE QUEDA SELECCIONADA LA TALLA*/
+/* *Funciond e Javascript que mantiene activo el boton de tallas */
 
 .grid-tallas button.talla-activa {
   background: #ff3b80;

@@ -1,0 +1,84 @@
+/* Estilos Generales */
+
+body {
+    font-family: "Montserrat", serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    background-color: #000;
+}
+
+/* Header */
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    background-color: #000;
+}
+
+html {
+    scroll-behavior: smooth;
+  }
+/*Seccion de entrevistas Endrik */
+
+  .entrevista-neond {
+	background-color: #662d91; 
+	color: white;
+	padding: 4rem 2rem;
+	font-family: 'Montserrat', sans-serif;
+	
+  }
+  
+  .contenedor-entrevista {
+	display: flex;
+	flex-wrap: wrap;
+	align-items: center;
+	justify-content: center;
+	max-width: 1200px;
+	margin: auto;
+	gap: 3rem;
+  }
+  
+  .imagen-entrevista img {
+	width: 100%;
+	max-width: 400px;
+	border-radius: 10px;
+	display: block;
+  }
+  
+  .texto-entrevista {
+	max-width: 600px;
+  }
+  
+  .texto-entrevista h2 {
+	font-family: 'Montserrat', sans-serif;
+	font-size: 1.8rem;
+	margin-bottom: 1.5rem;
+	font-weight: 700;
+  }
+  
+  .texto-entrevista p {
+	font-size: 1rem;
+	line-height: 1.7;
+	margin-bottom: 1rem;
+	color: #fff;
+  }
+  
+  .texto-entrevista strong {
+	font-family: 'Montserrat', sans-serif;
+	color: white;
+  }
+  
+  /* Responsive */
+  @media (max-width: 768px) {
+	.contenedor-entrevista {
+	  flex-direction: column;
+	  text-align: center;
+	}
+  
+	.texto-entrevista {
+	  max-width: 90%;
+	}
+  }

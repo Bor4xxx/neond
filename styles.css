@@ -9,6 +9,7 @@ body {
 }
 
 /* Header */
+
 header {
     display: flex;
     justify-content: space-between;
@@ -17,8 +18,12 @@ header {
     background-color: #000;
 }
 
+html {
+    scroll-behavior: smooth;
+  }
+  
 .logo img{
-    width: 120PX 120px;
+    width: 150PX 150px;
 }
 nav ul {
     list-style: none;
@@ -30,11 +35,12 @@ nav ul li a {
     text-decoration: none;
 }
 /* menu config */
+
 .menu_navegacion{
-    font-size: 13px;    
+    font-size: 18px;    
     letter-spacing: 2px;
     font-family: "Montserrat", serif;
-    ont-weight:lighter;
+    font-weight:lighter;
     margin: 15px 20px;
     padding: 20px;
 
@@ -50,6 +56,7 @@ nav ul li a {
     .menu_navegacion ul {
         flex-direction: column;
         gap: 10px;
+        font-size: 20px;
     }
 }
 /* Banner / Video */
@@ -87,26 +94,26 @@ nav ul li a {
     background-position: center;
     color: white;
     font-family: "Montserrat",serif;
-    font-size: 18px;
+    font-size: 14px;
     font-weight: bold;
     justify-content: flex-end;
     align-items:center;
     justify-content: center;
     border: none;
-    cursor: pointer;*/
+    cursor: pointer;
 }
 
 .boton_color{
 
-    color: #FFF;
-  border-radius: 0px;
+  color: #FFF;
+  border-radius: 5px;
   /*border: 2px solid rgb(216, 2, 134);*/
   padding: 5px 12px;
   display: flex;
   justify-content: center;
   align-items: center;
   font-family: "Montserrat",serif;
-  font-size: 12px;
+  font-size: 15px;
   letter-spacing: 1px;
   cursor: pointer;
   box-shadow: inset 0 0 0 0 #D80286;
@@ -119,27 +126,46 @@ nav ul li a {
     box-shadow: inset 400px 0 0 0 #D80286
     
 }
+/*Seccion de botines botones grandes */
+
 .btn-morado {
     background-image: url('./media/Seccion_botines-04.png');
     background-size: cover;
+    background-position: center;
     color: white;
-    font-size: 25px;
+    font-size: 26px;
     letter-spacing: 5px;
     font-weight: bold;
-    padding: 20px;
+    padding: 20px 40px;
     border: none;
+    border-radius: 5px;
     cursor: pointer;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
+
+.btn-morado:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 25px rgb(0, 0, 0);
+}
+
 .btn-magenta {
     background-image: url('./media/Seccion_botines-05.png'); 
     background-size: cover; 
+    background-position: center;
     color: white; 
     font-size: 25px; 
     letter-spacing: 5px;
-    font-weight: bold; 
-    padding: 20px; 
+    font-weight: bold;      
+    padding: 20px 40px; 
     border: none; 
+    border-radius: 5px;
     cursor: pointer;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.btn-magenta:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 25px rgb(0, 0, 0);
 }
 
 /* Contenedor principal */
@@ -187,16 +213,18 @@ nav ul li a {
 
 /* Descripción */
 .description {
-    color: #bbb;
+
+    color: #ffffff;
     font-size: 16px;
     line-height: 1.6;
     margin-bottom: 20px;
 }
 
-/* Botón */
+/* Botón Next Level*/
 .btn {
     background-color: #ff3b80;
     font-family: "Montserrat",serif;
+    letter-spacing: 2px;
     color: white;
     padding: 10px 20px;
     font-size: 16px;
@@ -302,10 +330,8 @@ nav ul li a {
     background: url(../NEOND_Website/media/Tienda_banner.png);
 }
 
-
 /*Seccion de testimonios*/
 
-  
   .seccion-testimonios {
     display: flex;
     flex-wrap: wrap;

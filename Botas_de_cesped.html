@@ -11,7 +11,7 @@
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100..900&display=swap" rel="stylesheet">
         <link rel="icon" type="image/x-icon" href="./media/Fav_icon-blanco.png">
-        <title>NEOND - Botines</title>
+        <title>NEOND - Cesped </title>
         <link rel="stylesheet" href="styles.css">
         <link rel="stylesheet" href="botas_cesped.css">
     </head>
@@ -48,7 +48,7 @@
     </header>
 
     <!--:::::::::::::::::::::::::::::::::::::::::::::::-->
-    <!--............ Seccion de botines .............. -->
+    <!--....... Seccion de botines Principales ....... -->
     <!--:::::::::::::::::::::::::::::::::::::::::::::::-->
 
     <section class="botines">
@@ -56,39 +56,42 @@
             <img id="generation" src="./media/Botin_One.png" alt="Generation G-one">
             <p>Para los que inician con la <br> pasión del fútbol</p>
            <h1 class="precio">40.00€</h1>
-            <a href="#seccion-botin1" class="boton">G-ONE</a>
+           <a href="#Botin_G-ONE" class="boton">G+ONE</a>
+
         </div>
         <div class="botin" id="botin2">
             <img src="./media/Botin_Green.png" alt="Generation G-green">
             <p>Durabilidad, control y <br>destacar en cancha.</p>
             <h1 class="precio">57.00€</h1>
-            <a href="#seccion-botin2" class="boton">G-GREEN</a>
+            <a href="#Botin_G-GREEN" class="boton">G+GREEN</a>
         </div>
         <div class="botin" id="botin3">
             <img src="./media/Botin_Gold.png" alt="Generation G-Gold">
             <p>Tecnología avanzada y confort premium de NEOND</p>
             <h1 class="precio">75.00€</h1>
-            <a href="#seccion-botin3" class="boton">G-GOLD</a>
+            <a href="#Botin_G-GOLD" class="boton">G+GOLD</a>
         </div>
     </section>
 
-    <!--:::::::::::::::::::::::::::::::::::::::::::::::-->
-    <!--............ Seccion Info G-One  ..............-->
-    <!--:::::::::::::::::::::::::::::::::::::::::::::::-->
+<!--:::::::::::::::::::::::::::::::::::::::::::::::-->
+<!--............ Seccion Info G-One  ..............-->
+<!--:::::::::::::::::::::::::::::::::::::::::::::::-->
 
     <section class="producto-seccion">
         <div class="galeria">
             <img id="imagen-activa" src="./media/Galeria_Botines_de_cesped/Generation_One_Vista_1.png" alt="G-ONE" />
 
           <div class="puntos-galeria">
-            <span class="punto activo" onclick="cambiarImagen(0)"></span>
-            <span class="punto" onclick="cambiarImagen(1)"></span>
-            <span class="punto" onclick="cambiarImagen(2)"></span>
+            <span class="punto activo" onclick="cambiarImagenGONE(0)"></span>
+            <span class="punto" onclick="cambiarImagenGONE(1)"></span>
+            <span class="punto" onclick="cambiarImagenGONE(2)"></span>
           </div>
         </div>
+
+        
       
-        <div class="info-producto">
-          <h2> <span class="highlight"> NEON G-ONE</></h2>
+        <div class="info-producto" id="Botin_G-ONE">
+          <h2> <span class="highlight"> NEON G+ONE </h2>
       
           <div class="bloque-info">
             <h4>Material del empeine</h4>
@@ -133,24 +136,131 @@
         </div>
       </section>
 
-      <script>
-        
-        const imagenes = [
-        './media/Galeria_Botines_de_cesped/Generation_One_Vista_1.png',
-        './media/Galeria_Botines_de_cesped/Generation_One_Vista_2.png',
-        './media/Galeria_Botines_de_cesped/Generation_One_Vista_3.png'
-        ];
+<!--:::::::::::::::::::::::::::::::::::::::::::::::-->
+<!--............ Seccion Info G-Green .............-->
+<!--:::::::::::::::::::::::::::::::::::::::::::::::-->
 
+    <section class="producto-seccion">
+      <div class="galeria">
+          <img id="imagen-activa" src="./media/Galeria_Botines_de_cesped/Generation_Green_Vista_1.png" alt="G-ONE" />
+
+        <div class="puntos-galeria">
+          <span class="punto activo" onclick="cambiarImagenGGREEN(0)"></span>
+          <span class="punto" onclick="cambiarImagenGGREEN(1)"></span>
+          <span class="punto" onclick="cambiarImagenGGREEN(2)"></span>
+
+        </div>
+      </div>
+    
+      <div class="info-producto" id="Botin_G-GREEN">
+        <h2> <span class="highlight"> NEON G+GREEN</></h2>
+    
+        <div class="bloque-info">
+          <h4>Material del empeine</h4>
+          <p> Fabricado con material sintético de alta resistencia, pensado para ofrecer durabilidad sin sacrificar flexibilidad. 
+              Su textura permite un buen contacto con el balón, facilitando el aprendizaje y control del juego.
+              esta hecha  para jugar en cesped (artificial y natural).</p>
+    
+          <h4>Amortiguación y comodidad:</h4>
+          <p>Suela ligera con tecnología básica de absorción de impactos, diseñada para reducir la fatiga en entrenamientos largos y garantizar una pisada cómoda. Ideal para quienes están dando sus primeros pasos en el fútbol.</p>
+    
+          <h4>Ajuste perfecto:</h4>
+          <p>Optimizado para césped natural, con un desempeño aceptable en césped artificial (hasta un 30% de uso). Diseño ergonómico para mayor estabilidad y control.</p>
+
+        </div>
+    
+        <div class="tallas-producto">
+          <div class="tallas-header">
+            <span>Tallas</span>
+            <a href="#" onclick="abrirGuia(event)">Guía de tallas</a>
+          </div>
+          <div class="grid-tallas">
+            <button onclick="seleccionarTalla(this)">30</button>
+            <button onclick="seleccionarTalla(this)">31</button>
+            <button onclick="seleccionarTalla(this)">32</button>
+            <button onclick="seleccionarTalla(this)">33</button>
+            <button onclick="seleccionarTalla(this)">34</button>
+            <button onclick="seleccionarTalla(this)">35</button>
+            <button onclick="seleccionarTalla(this)">36</button>
+            <button onclick="seleccionarTalla(this)">37</button>
+          </div>
+        </div>
         
-        function cambiarImagen(index) {
-          document.getElementById("imagen-activa").src = imagenes[index];
-          document.querySelectorAll('.punto').forEach((p, i) => {
-            p.classList.toggle('activo', i === index);
-          });
-        }
-        </script>
+    
+        <button class="btn-carrito">AGREGAR AL CARRITO</button>
         
-      
+    
+        <ul class="beneficios">
+          <li><img src="./media/Galeria_Botines_de_cesped/Icono_envio.png" /> Envío Gratis a partir de 150€</li>
+          <li><img src="./media/Galeria_Botines_de_cesped/Icono_Pago.png" /> Paga seguro, puedes pagar en línea</li>
+          <li><img src="./media/Galeria_Botines_de_cesped/Icono_devolución.png" /> Devoluciones hasta 60 días</li>
+        </ul>
+      </div>
+    </section>
+
+<!--:::::::::::::::::::::::::::::::::::::::::::::::-->
+<!--............ Seccion Info G-Gold .............-->
+<!--:::::::::::::::::::::::::::::::::::::::::::::::-->
+
+<section class="producto-seccion">
+  <div class="galeria">
+      <img id="imagen-activa" src="./media/Galeria_Botines_de_cesped/Generation_Gold_Vista_1.png" alt="G-ONE" />
+
+    <div class="puntos-galeria">
+      <span class="punto activo" onclick="cambiarImagenGGOLD(0)"></span>
+      <span class="punto" onclick="cambiarImagenGGOLD(1)"></span>
+      <span class="punto" onclick="cambiarImagenGGOLD(2)"></span>
+
+    </div>
+  </div>
+
+  <div class="info-producto" id="Botin_G-GOLD">
+    <h2> <span class="highlight"> NEON G+GOLD</></h2>
+
+    <div class="bloque-info">
+      <h4>Material del empeine</h4>
+      <p> Fabricado con material sintético de alta resistencia, pensado para ofrecer durabilidad sin sacrificar flexibilidad. 
+          Su textura permite un buen contacto con el balón, facilitando el aprendizaje y control del juego.
+          esta hecha  para jugar en cesped (artificial y natural).</p>
+
+      <h4>Amortiguación y comodidad:</h4>
+      <p>Suela ligera con tecnología básica de absorción de impactos, diseñada para reducir la fatiga en entrenamientos largos y garantizar una pisada cómoda. Ideal para quienes están dando sus primeros pasos en el fútbol.</p>
+
+      <h4>Ajuste perfecto:</h4>
+      <p>Optimizado para césped natural, con un desempeño aceptable en césped artificial (hasta un 30% de uso). Diseño ergonómico para mayor estabilidad y control.</p>
+
+    </div>
+
+    <div class="tallas-producto">
+      <div class="tallas-header">
+        <span>Tallas</span>
+        <a href="#" onclick="abrirGuia(event)">Guía de tallas</a>
+      </div>
+      <div class="grid-tallas">
+        <button onclick="seleccionarTalla(this)">30</button>
+        <button onclick="seleccionarTalla(this)">31</button>
+        <button onclick="seleccionarTalla(this)">32</button>
+        <button onclick="seleccionarTalla(this)">33</button>
+        <button onclick="seleccionarTalla(this)">34</button>
+        <button onclick="seleccionarTalla(this)">35</button>
+        <button onclick="seleccionarTalla(this)">36</button>
+        <button onclick="seleccionarTalla(this)">37</button>
+      </div>
+    </div>
+    
+
+    <button class="btn-carrito">AGREGAR AL CARRITO</button>
+    
+
+    <ul class="beneficios">
+      <li><img src="./media/Galeria_Botines_de_cesped/Icono_envio.png" /> Envío Gratis a partir de 150€</li>
+      <li><img src="./media/Galeria_Botines_de_cesped/Icono_Pago.png" /> Paga seguro, puedes pagar en línea</li>
+      <li><img src="./media/Galeria_Botines_de_cesped/Icono_devolución.png" /> Devoluciones hasta 60 días</li>
+    </ul>
+  </div>
+</section>
+
+    
 
     <!--:::::::::::::::::::::::::::::::::::::::::::::::-->
     <!--................... Footer.....................-->
@@ -242,7 +352,9 @@
             }
         </script>
 
-        <!--Boton de selector de tallas -->
+    <!--:::::::::::::::::::::::::::::::::::::::::::::::-->
+    <!--........... Botón seleccion de tallas .........-->
+    <!--:::::::::::::::::::::::::::::::::::::::::::::::-->
 
         <div id="modal-guia" class="modal-guia">
             <span class="cerrar-guia" onclick="cerrarGuia()">&times;</span>
@@ -265,7 +377,57 @@
             function cerrarGuia() {
               document.getElementById('modal-guia').style.display = 'none';
             }
+            
             </script>
+    <!--:::::::::::::::::::::::::::::::::::::::::::::::-->
+    <!--....... Seccion para las galerias JAVASCRIPT...-->
+    <!--:::::::::::::::::::::::::::::::::::::::::::::::-->
+
+    <script>
+      // Botin G-ONE
+      function cambiarImagenGONE(index) {
+        const imagenes = [
+          './media/Galeria_Botines_de_cesped/Generation_One_Vista_1.png',
+          './media/Galeria_Botines_de_cesped/Generation_One_Vista_2.png',
+          './media/Galeria_Botines_de_cesped/Generation_One_Vista_3.png'
+        ];
+        const seccion = document.getElementById('Botin_G-ONE').closest('.producto-seccion');
+        seccion.querySelector('.galeria img').src = imagenes[index];
+        seccion.querySelectorAll('.punto').forEach((p, i) => {
+          p.classList.toggle('activo', i === index);
+        });
+      }
+    
+      // Botin G-GREEN
+      function cambiarImagenGGREEN(index) {
+        const imagenes = [
+          './media/Galeria_Botines_de_cesped/Generation_Green_Vista_1',
+          './media/Galeria_Botines_de_cesped/Generation_Green_Vista_2',
+          './media/Galeria_Botines_de_cesped/Generation_Green_Vista_3.png'
+        ];
+        const seccion = document.getElementById('Botin_G-GREEN').closest('.producto-seccion');
+        seccion.querySelector('.galeria img').src = imagenes[index];
+        seccion.querySelectorAll('.punto').forEach((p, i) => {
+          p.classList.toggle('activo', i === index);
+        });
+      }
+    
+      // Botin G-GOLD
+      function cambiarImagenGGOLD(index) {
+        const imagenes = [
+          './media/Galeria_Botines_de_cesped/Generation_Gold_Vista_1.png',
+          './media/Galeria_Botines_de_cesped/Generation_Gold_Vista_2.png',
+          './media/Galeria_Botines_de_cesped/Generation_Gold_Vista_3.png'
+        ];
+        const seccion = document.getElementById('Botin_G-GOLD').closest('.producto-seccion');
+        seccion.querySelector('.galeria img').src = imagenes[index];
+        seccion.querySelectorAll('.punto').forEach((p, i) => {
+          p.classList.toggle('activo', i === index);
+        });
+      }
+    </script>
+      
+    
             
 </body>
 </html>
