@@ -2,6 +2,7 @@
 
 body {
     font-family: "Montserrat", serif;
+    font-weight: normal;
     margin: 0;
     padding: 0;
     box-sizing: border-box;
@@ -22,8 +23,7 @@ html {
     scroll-behavior: smooth;
   }
   
-.logo img{
-    /*width: 150PX 150px;*/
+
 }
 nav ul {
     list-style: none;
@@ -67,12 +67,12 @@ nav ul li a {
 	justify-content: center;
 	gap: 2rem;
 	padding: 3rem 1.5rem;
-	background-color: #0a0a0a;
+	background-color: #330015;
 	font-family: 'Montserrat', sans-serif;
   }
   
   .tarjeta-desafio {
-	background-color: #1c1c1c;
+	background-color: #000000;
 	border-radius: 12px;
 	padding: 1.5rem;
 	max-width: 300px;
@@ -83,7 +83,7 @@ nav ul li a {
   
   .tarjeta-desafio:hover {
 	transform: translateY(-5px);
-	box-shadow: 0 0 12px #D60B52;
+	box-shadow: 0 0 80px #D60B52;
   }
   
   .imagen-desafio {

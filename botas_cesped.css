@@ -1,5 +1,6 @@
 body {
     font-family: Arial, sans-serif;
+    font-weight: normal;
     margin: 0;
     padding: 0;
     background-color: #000;
@@ -21,7 +22,9 @@ html {
 }
 
 .logo img {
-    max-width: 120px 120px;
+  max-width: 120px;
+  height: auto;
+
 }
 
 .carro_de_compras {

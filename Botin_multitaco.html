@@ -26,7 +26,7 @@
 <header>
     <div class="logo">
         <a href="index.html">
-            <img src="./media/Logo_NEOND_blanco.png" alt="Logo NEOND">
+             <img src="./media/Logo_NEOND_blanco-07-07.png" alt="Logo NEOND">
         </a>
     </div>
         <nav class="menu_navegacion">
@@ -55,176 +55,242 @@
         <section class="botines">
             <div class="botin" id="botin1">
                 <img id="generation" src="./media/Generation_yellow_bottom.png" alt="Botín 1">
-                <p>Para los que inician con la <br> pasión del fútbol</p>
-               <h1 class="precio">45.00€</h1>
-                <a href="#seccion-botin1" class="boton">G-YELLOW</a>
+                <!--<p>Diseñado para el jugador que busca <br>un toque de color y estilo en el campo.</p>-->
+               <h1 class="precio">65.00€</h1>
+               <a href="#botin-g-yellow" class="boton">G-YELLOW</a>
             </div>
+
             <div class="botin" id="botin2">
                 <img src="./media/Generation_green_bottom.png" alt="Botín 2">
-                <p>Durabilidad, control y <br>destacar en cancha.</p>
-                <h1 class="precio">60.00€</h1>
-                <a href="#seccion-botin2" class="boton">G-GREEN II</a>
+                <!--<p>Durabilidad, control y <br>destacar en el campo de fútbol.</p>-->
+                <h1 class="precio">65.00€</h1>
+                <a href="#botin-g-green" class="boton">G-GREEN II</a>
             </div>
+
             <div class="botin" id="botin3">
                 <img src="./media/Generation_blue_bottom.png" alt="Botín 3">
-                <p>Tecnología avanzada y confort premium de NEOND</p>
-                <h1 class="precio">75.00€</h1>
-                <a href="#seccion-botin3" class="boton">G-BLUE</a>
+                <!--<p>Tecnología avanzada y confort premium de NEOND</p>-->
+                <h1 class="precio">65.00€</h1>
+                <a href="#botin-g-gold" class="boton">G-BLUE</a>
             </div>
         </section>
 
-    <!--:::::::::::::::::::::::::::::::::::::::::::::::-->
-    <!--............ Seccion Info Yellow...............-->
-    <!--:::::::::::::::::::::::::::::::::::::::::::::::-->
+<!--:::::::::::::::::::::::::::::::::::::::::::::::-->
+<!--............ Seccion Info G-YELLOW ..............-->
+<!--:::::::::::::::::::::::::::::::::::::::::::::::-->
 
-        <section class="info" id="seccion-botin1">
-            <div class="imagen">
-                <img src="./media/G-Yellow_section.png" alt="Imagen Botín G-ONE">
+<section class="gama-multitaco-basica" id="botin-g-yellow">
+    <div class="galeria">
+        <img id="imagen-activa-yellow" src="./media/Galeria_Botines_de_cesped/Generation_One_Vista_1.png" alt="G-YELLOW" />
+    <div class="puntos-galeria">
+        <span class="punto activo" onclick="cambiarImagenGONE(0)"></span>
+        <span class="punto" onclick="cambiarImagenGONE(1)"></span>
+        <span class="punto" onclick="cambiarImagenGONE(2)"></span>
+    </div>
+    </div>
+    <div class="info-producto" id="Botin_G-YELLOW">
+    <h2><span class="highlight">G-YELLOW</span></h2>
+
+    <div class="bloque-info"> 
+
+                <h4>Materiales</h4>
+                <p>Fabricado con material sintético ligero y resistente, este botín está diseñado para ofrecer la durabilidad necesaria en entrenamientos frecuentes sin perder flexibilidad. Su acabado texturizado permite un buen contacto con el balón, ideal para desarrollar el control en jugadores jóvenes.</p>
+
+                <h4>Amortiguación y comodidad</h4>
+                <p>Suela de goma con múltiples microtacos (TF - Turf), pensada para absorber impactos y distribuir la presión del pie de forma uniforme. Esto proporciona una sensación de ligereza y comodidad incluso en superficies duras o sintéticas.</p>
+
+                <h4>Ajuste y versatilidad</h4>
+                <p>Gracias a su diseño ergonómico, el botín multitaco ofrece un ajuste seguro sin oprimir. Es perfecto para campos de césped artificial de primera generación, pistas escolares o entrenamientos en espacios reducidos. Una opción accesible y cómoda para quienes inician en el fútbol.</p>
+
+    </div>
+
+    <div class="tallas-producto">
+      <div class="tallas-header">
+             <span>Tallas</span>
+        <a href="#" onclick="abrirGuia(event)">Guía de tallas</a>
+      </div>
+            <div class="grid-tallas">
+              <button onclick="seleccionarTalla(this)">30</button>
+              <button onclick="seleccionarTalla(this)">31</button>
+              <button onclick="seleccionarTalla(this)">32</button>
+              <button onclick="seleccionarTalla(this)">33</button>
+              <button onclick="seleccionarTalla(this)">34</button>
+              <button onclick="seleccionarTalla(this)">35</button>
+              <button onclick="seleccionarTalla(this)">36</button>
+              <button onclick="seleccionarTalla(this)">37</button>
             </div>
+          </div>
+          
+          <button class="btn-carrito">AGREGAR AL CARRITO</button>
+      
+          <ul class="beneficios">
+            <li><img src="./media/Galeria_Botines_de_cesped/Icono_envio.png" /> Envío Gratis a partir de 150€</li>
+            <li><img src="./media/Galeria_Botines_de_cesped/Icono_Pago.png" /> Paga seguro, puedes pagar en línea</li>
+            <li><img src="./media/Galeria_Botines_de_cesped/Icono_devolución.png" /> Devoluciones hasta 60 días</li>
+          </ul>
+        </div>
+</section>
 
-            <div class="texto">
-                <h2>NEOND <span>YELLOW</span></h2>
-                <h3>Campo de césped artificial</h3>
-                <p>Tacos medianos y equilibrados (AG - Artificial Ground) para tracción adecuada.</p> 
-                <h3>Amortiguación y comodidad</h3>
-                <p>Tacos cortos y densos (TF - Turf) para durabilidad superior.</p>
-                <h3>Ajuste perfecto</h3> 
-                <p>Planas o con pequeños tacos (TF - Turf) para estabilidad en superficies duras.</p>
+<!--:::::::::::::::::::::::::::::::::::::::::::::::-->
+<!--............ Seccion Info G-GREEN II .............-->
+<!--:::::::::::::::::::::::::::::::::::::::::::::::-->
 
-                <!-- Selector de talla Yellow -->
+    <section class="gama-multitaco-media" id="botin-g-green">
+        <div class="galeria">
+        <img id="imagen-activa-green" src="./media/Galeria_Botines_de_cesped/Generation_Green_Vista_1.png" alt="G-GREEN II" />
+    <div class="puntos-galeria">
+        <span class="punto activo" onclick="cambiarImagenGGREEN(0)"></span>
+        <span class="punto" onclick="cambiarImagenGGREEN(1)"></span>
+        <span class="punto" onclick="cambiarImagenGGREEN(2)"></span>
+    </div>
+  </div>
+    
+    <div class="info-producto" id="Botin_G-GREEN">
+    <h2><span class="highlight">G+GREEN II</span></h2>
+    
+        <div class="bloque-info">
 
-                <label for="talla-botin">Selecciona tu talla:</label>
-                <select id="talla-botin" class="talla-select">
-                    <option value="20">20</option>
-                    <option value="21">21</option>
-                    <option value="24">24</option>
-                    <option value="25">25</option>
-                    <option value="31">31</option>
-                    <option value="32">32</option>
-                    <option value="33">33</option>
-                    <option value="34">34</option>
-                    <option value="35">35</option>
-                    </select>
-                <button class="boton-compra">Comprar Ahora</button>
-            </div>
-        </section>
+            <h4>Materiales</h4>
+            <p>Fabricado con material sintético de alta resistencia que combina durabilidad y flexibilidad. Su superficie semitexturizada mejora el control del balón, facilitando los movimientos técnicos durante el juego. Ideal para jugadores que buscan rendimiento constante sin sacrificar comodidad.</p>
 
-    <!--:::::::::::::::::::::::::::::::::::::::::::::::-->
-    <!--............ Seccion Green  II... ............ -->
-    <!--:::::::::::::::::::::::::::::::::::::::::::::::-->
+            <h4>Amortiguación y comodidad</h4>
+            <p>La suela multitaco está diseñada con una estructura ligera y tecnología de absorción de impactos que reduce la fatiga muscular. Aporta un buen nivel de confort en entrenamientos prolongados y partidos intensos sobre superficies artificiales y duras.</p>
 
-        <section class="info" id="seccion-botin2">
-            <div class="imagen">
-                <img src="./media/G-Green II_section.png" alt="Imagen Botín G-GREEN">
-            </div>
+            <h4>Ajuste perfecto</h4>
+            <p>Su horma ergonómica se adapta a la forma del pie ofreciendo estabilidad, sujeción y libertad de movimiento. Este modelo está optimizado para césped artificial, aunque también responde bien en césped natural seco y pistas polivalentes.</p>
 
-            <div class="texto">
-                <h2>NEOND <span>G-GREEN II</span></h2>
-                <h3>Cancha de césped natural.</h3> 
-                <p>Tacos largos y espaciados (FG - Firm Ground) para rendimiento superior.</p>
-                <h3>Amortiguación y comodidad</h3> 
-                <p>Tacos cortos y densos (AG - Artificial Ground) para mayor amortiguación.</p>
-                <h3>Ajuste perfecto</h3> 
-                <p>Pequeños tacos (TF - Turf) para estabilidad en cualquier superficie.</p>
+        </div>
+    
+        <div class="tallas-producto">
+          <div class="tallas-header">
+            <span>Tallas</span>
+            <a href="#" onclick="abrirGuia(event)">Guía de tallas</a>
+          </div>
+          <div class="grid-tallas">
+            <button onclick="seleccionarTalla(this)">30</button>
+            <button onclick="seleccionarTalla(this)">31</button>
+            <button onclick="seleccionarTalla(this)">32</button>
+            <button onclick="seleccionarTalla(this)">33</button>
+            <button onclick="seleccionarTalla(this)">34</button>
+            <button onclick="seleccionarTalla(this)">35</button>
+            <button onclick="seleccionarTalla(this)">36</button>
+            <button onclick="seleccionarTalla(this)">37</button>
+          </div>
+        </div>
+        
+    
+        <button class="btn-carrito">AGREGAR AL CARRITO</button>
+        
+    
+        <ul class="beneficios">
+          <li><img src="./media/Galeria_Botines_de_cesped/Icono_envio.png" /> Envío Gratis a partir de 150€</li>
+          <li><img src="./media/Galeria_Botines_de_cesped/Icono_Pago.png" /> Paga seguro, puedes pagar en línea</li>
+          <li><img src="./media/Galeria_Botines_de_cesped/Icono_devolución.png" /> Devoluciones hasta 60 días</li>
+        </ul>
+      </div>
+    </section>
 
-                <!-- Boton de talla G Green II -->
+<!--:::::::::::::::::::::::::::::::::::::::::::::::-->
+<!--............ Seccion Info G-GOLD .............-->
+<!--:::::::::::::::::::::::::::::::::::::::::::::::-->
 
-                <label size for="talla-botin"> <span>Selecciona tu talla:</span></label>
-                <select id="talla-botin" class="talla-select">
-                    <option value="20">20</option>
-                    <option value="21">21</option>
-                    <option value="22">22</option>
-                    <option value="23">23</option>
-                    <option value="24">24</option>
-                    <option value="25">25</option>
-                    <option value="26">26</option>
-                    <option value="27">27</option>
-                    <option value="28">28</option>
-                    <option value="29">29</option>
-                    <option value="30">30</option>
-                </select>
+<section class="gama-multitaco-premium" id="botin-g-gold">
+  <div class="galeria">
+    <img id="imagen-activa-gold" src="./media/Galeria_Botines_de_cesped/Generation_Gold_Vista_1.png" alt="G-GOLD" />
+    <div class="puntos-galeria">
+      <span class="punto activo" onclick="cambiarImagenGGOLD(0)"></span>
+      <span class="punto" onclick="cambiarImagenGGOLD(1)"></span>
+      <span class="punto" onclick="cambiarImagenGGOLD(2)"></span>
+    </div>
+  </div>
 
-                 <!-- Botón de compra -->
+    <div class="info-producto" id="Botin_G-GOLD">
+    <h2><span class="highlight">G-GOLD</span></h2>
 
-             <button class="boton-compra">Comprar Ahora</button>
-            </div>
-        </section>
 
-    <!--:::::::::::::::::::::::::::::::::::::::::::::::-->
-    <!--............ Seccion G Blue................... -->
-    <!--:::::::::::::::::::::::::::::::::::::::::::::::-->
 
-        <section class="info" id="seccion-botin3">
-            <div class="imagen">
-                <img src="./media/G-BLUE_section.png" alt="Imagen Botín G-GOLD">
-            </div>
+    <div class="bloque-info">
+        
+        <h4>Materiales</h4>
+        <p>Confeccionado en material sintético técnico de última generación, este botín ofrece una combinación perfecta de resistencia, flexibilidad y ligereza. Su textura de alto rendimiento mejora el control del balón incluso en condiciones exigentes, ideal para jugadores que buscan precisión y estilo en el juego.</p>
 
-            <div class="texto">
-                <h2>NEOND <span>G-BLUE</span></h2>
-                <h3>Material del empeine</h3>
-                <p>Tacos largos y espaciados (FG - Firm Ground) para agarre excepcional.</p>
-                <h3>Amortiguación y comodidad</h3>
-                <p>Tacos cortos y densos (AG - Artificial Ground) para protección avanzada.</p>
-                <h3>Ajuste perfecto</h3>
-                <p>Pequeños tacos (TF - Turf) para máxima estabilidad.</p>
+        <h4>Amortiguación y comodidad</h4>
+        <p>Equipada con una suela multitaco avanzada y sistema de absorción dinámica, proporciona una pisada fluida y protección ante impactos repetitivos. Diseñada para ofrecer máximo confort en sesiones intensas, permite movimientos explosivos con total estabilidad.</p>
 
-                <!-- Selector de talla G Blue -->
-                
-                <label for="talla-botin">Selecciona tu talla:</label>
-                <select id="talla-botin" class="talla-select">
-                    <option value="20">20</option>
-                    <option value="21">21</option>
-                    <option value="22">22</option>
-                    <option value="23">23</option>
-                    <option value="24">24</option>
-                    <option value="25">25</option>
-                    <option value="26">26</option>
-                    <option value="27">27</option>
-                </select>
+        <h4>Ajuste perfecto</h4>
+        <p>Diseño ergonómico con estructura envolvente que se adapta como un guante al pie. Ofrece soporte en giros rápidos y desplazamientos agresivos, siendo perfecta para césped artificial de alto rendimiento, pistas deportivas y superficies duras. La opción premium de NEOND para jugadores exigentes.</p>
 
-                <!-- Botón de compra -->
+    </div>
 
-                <button class="boton-compra">Comprar Ahora</button>
-            </div>
-        </section>
+    <div class="tallas-producto">
+      <div class="tallas-header">
+        <span>Tallas</span>
+        <a href="#" onclick="abrirGuia(event)">Guía de tallas</a>
+      </div>
+      <div class="grid-tallas">
+        <button onclick="seleccionarTalla(this)">30</button>
+        <button onclick="seleccionarTalla(this)">31</button>
+        <button onclick="seleccionarTalla(this)">32</button>
+        <button onclick="seleccionarTalla(this)">33</button>
+        <button onclick="seleccionarTalla(this)">34</button>
+        <button onclick="seleccionarTalla(this)">35</button>
+        <button onclick="seleccionarTalla(this)">36</button>
+        <button onclick="seleccionarTalla(this)">37</button>
+      </div>
+    </div>
+    
+
+    <button class="btn-carrito">AGREGAR AL CARRITO</button>
+    
+
+    <ul class="beneficios">
+      <li><img src="./media/Galeria_Botines_de_cesped/Icono_envio.png" /> Envío Gratis a partir de 150€</li>
+      <li><img src="./media/Galeria_Botines_de_cesped/Icono_Pago.png" /> Paga seguro, puedes pagar en línea</li>
+      <li><img src="./media/Galeria_Botines_de_cesped/Icono_devolución.png" /> Devoluciones hasta 60 días</li>
+    </ul>
+  </div>
+</section>
+
+    
 
     <!--:::::::::::::::::::::::::::::::::::::::::::::::-->
     <!--................... Footer.....................-->
     <!--:::::::::::::::::::::::::::::::::::::::::::::::-->
-
-        <footer>
-            <div class="footer-container">
-                <div class="footer-section">
-                    <h3>NEOND Store</h3>
-                    <a href="https://maps.app.goo.gl/TL8U7bPpWn94exdLA" target="_blank">Nuestra tienda</a>
-                    <p>Teléfono: 865 616 65</p>
-                    <a href="mailto:neon@info.com">neon@info.com</a>
-                </div>
-                <div class="footer-section">
-                    <h3>Productos</h3>
-                    <p><a href="./Botas_de_cesped.html">Botín césped</a></p>
-                    <p><a href="./Botin_multitaco.html">Botín multitacos</a></p>
-                </div>
-                <div class="footer-section">
-                    <h3>Suscríbete</h3>
-                    <input type="email" id="email" placeholder="Tu correo aquí">
-                    <button class="subscribe-btn">SUSCRIBIRSE</button>
-                </div>
+    
+    <footer>
+        <div class="footer-container">
+            <div class="footer-section">
+                <h3>NEOND Store</h3>
+                <a href="https://maps.app.goo.gl/TL8U7bPpWn94exdLA" target="_blank">Nuestra tienda</a>
+                <p>Teléfono: 865 616 65</p>
+                <a href="mailto:neon@info.com">neon@info.com</a>
             </div>
-            <div class="footer-bottom">
-                <p>Copyright 2025 NEOND_ design by <a href="#">@skirladesign</a></p>
+            <div class="footer-section">
+                <h3>Productos</h3>
+                <p><a href="./Botas_de_cesped.html">Botín césped</a></p>
+                <p><a href="./Botin_multitaco.html">Botín multitacos</a></p>
             </div>
-        </footer>
+            <div class="footer-section">
+                <h3>Suscríbete</h3>
+                <input type="email" id="email" placeholder="Tu correo aquí">
+                <button class="subscribe-btn">SUSCRIBIRSE</button>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>Copyright 2025 NEOND_ design by <a href="#">@skirladesign</a></p>
+        </div>
+    </footer>
 
     <!--:::::::::::::::::::::::::::::::::::::::::::::::-->
     <!--............ Pop Up iniciar sesion .............-->
     <!--:::::::::::::::::::::::::::::::::::::::::::::::-->
         
     <div id="loginPopup" class="popup">
+
         <div class="popup-content">
             <span class="close">&times;</span>
             <div class="popup-logo">
-                <img src="./media/Logo_NEOND_blanco.png" alt="neondClub Logo">
+                <img src="./media/Logo_NEOND_blanco.png" alt="Logo">
             </div>
             <img src="./media/Logo_NEOND_negro.png" alt="logo_pop_up">
             <h2>LAS RECOMPENSAS NEOND TE ESPERAN</h2>
@@ -240,6 +306,7 @@
             <a href="#">Más información</a>
             <button class="btn-continue">CONTINUAR</button>
             <p>Al continuar, aceptas los <a href="#">términos y condiciones</a> y el <a href="#">aviso de privacidad</a>.</p>
+
         </div>
     </div>
 
@@ -276,5 +343,79 @@
             }
         </script>
 
+    <!--:::::::::::::::::::::::::::::::::::::::::::::::-->
+    <!--........... Botón seleccion de tallas .........-->
+    <!--:::::::::::::::::::::::::::::::::::::::::::::::-->
+
+        <div id="modal-guia" class="modal-guia">
+            <span class="cerrar-guia" onclick="cerrarGuia()">&times;</span>
+            <img src="./media/guia_tallas.png" alt="Guía de tallas" />
+          </div>
+          
+          <script>
+            function seleccionarTalla(boton) {
+              document.querySelectorAll('.grid-tallas button').forEach(b => {
+                b.classList.remove('talla-activa');
+              });
+              boton.classList.add('talla-activa');
+            }
+            
+            function abrirGuia(event) {
+              event.preventDefault();
+              document.getElementById('modal-guia').style.display = 'flex';
+            }
+            
+            function cerrarGuia() {
+              document.getElementById('modal-guia').style.display = 'none';
+            }
+            
+            </script>
+    <!--:::::::::::::::::::::::::::::::::::::::::::::::-->
+    <!--....... Seccion para las galerias JAVASCRIPT...-->
+    <!--:::::::::::::::::::::::::::::::::::::::::::::::-->
+
+    <script>
+      // Botin G-YELLOW
+      function cambiarImagenGONE(index) {
+        const imagenes = [
+          './media/Galeria_Botines_de_cesped/Generation_One_Vista_1.png',
+          './media/Galeria_Botines_de_cesped/Generation_One_Vista_2.png',
+          './media/Galeria_Botines_de_cesped/Generation_One_Vista_3.png'
+        ];
+        const seccion = document.getElementById('Botin_G-YELLOW').closest('.gama-multitaco-basica')
+        seccion.querySelector('.galeria img').src = imagenes[index];
+        seccion.querySelectorAll('.punto').forEach((p, i) => {
+          p.classList.toggle('activo', i === index);
+        });
+      }
+    
+      // Botin G-GREEN II
+      function cambiarImagenGGREEN(index) {
+        const imagenes = [
+          './media/Galeria_Botines_de_cesped/Generation_Green_Vista_1.png',
+          './media/Galeria_Botines_de_cesped/Generation_Green_Vista_2.png',
+          './media/Galeria_Botines_de_cesped/Generation_Green_Vista_3.png'
+        ];
+        const seccion = document.getElementById('Botin_G-GREEN').closest('.gama-multitaco-media');
+        seccion.querySelector('.galeria img').src = imagenes[index];
+        seccion.querySelectorAll('.punto').forEach((p, i) => {
+          p.classList.toggle('activo', i === index);
+        });
+      }
+    
+      // Botin G-GOLD
+      function cambiarImagenGGOLD(index) {
+        const imagenes = [
+          './media/Galeria_Botines_de_cesped/Generation_Gold_Vista_1.png',
+          './media/Galeria_Botines_de_cesped/Generation_Gold_Vista_2.png',
+          './media/Galeria_Botines_de_cesped/Generation_Gold_Vista_3.png'
+        ];
+        const seccion = document.getElementById('Botin_G-GOLD').closest('.gama-multitaco-premium');
+        seccion.querySelector('.galeria img').src = imagenes[index];
+        seccion.querySelectorAll('.punto').forEach((p, i) => {
+          p.classList.toggle('activo', i === index);
+        });
+      }
+    </script>
 </body>
 </html>

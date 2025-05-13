@@ -19,13 +19,13 @@
   <header>
     <div class="logo">
       <a href="index.html">
-        <img src="./media/Logo_NEOND_blanco.png" alt="Logo NEOND" />
+         <img src="./media/Logo_NEOND_blanco-07-07.png" alt="Logo NEOND">
       </a>
     </div>
     <nav class="menu_navegacion">
       <ul>
-        <div class="boton_color"><li><a href="#desafios">Desafíos</a></li></div>
-        <div class="boton_color"><li><a href="#entrevistas">Entrevistas</a></li></div>
+        <div class="boton_color"><li><a href="desafios.html">Desafíos</a></li></div>
+        <div class="boton_color"><li><a href="Entrevistas.html">Entrevistas</a></li></div>
         <div class="boton_color"><li><a href="#login">Blog</a></li></div>
         <div class="boton_color">
           <li><a href="#carrito"><img class="carro_de_compras" src="./media/carrito_decompras-03.png" width="30" height="30" alt="Carrito" /></a></li>
@@ -59,8 +59,91 @@
   </div>
 </section>
 
+<section class="galeria-neond">
+  <h2 class="titulo_galeria"><strong>MOMENTOS NEOND<strong></h2>
+  <div class="grid-galeria">
+    <img src="./media/Galeria_NEOND/Foto_1.png" alt="Momento 1" class="imagen-galeria" />
+    <img src="./media/Galeria_NEOND/Foto_2.png" alt="Momento 2" class="imagen-galeria" />
+    <img src="./media/Galeria_NEOND/Foto_3.png" alt="Momento 3" class="imagen-galeria" />
+    <img src="./media/Galeria_NEOND/Foto_4.png" alt="Momento 4" class="imagen-galeria" />
+    <img src="./media/Galeria_NEOND/Foto_5.png" alt="Momento 5" class="imagen-galeria" />
+    <img src="./media/Galeria_NEOND/Foto_6.png" alt="Momento 6" class="imagen-galeria" />
+    <img src="./media/Galeria_NEOND/Foto_7.png" alt="Momento 7" class="imagen-galeria" />
+    <img src="./media/Galeria_NEOND/Foto_8.png" alt="Momento 8" class="imagen-galeria" />
+  </div>
 
-  <footer></footer>
+  <!-- Modal -->
+  <div class="modal-galeria" id="modalGaleria">
+    <span class="cerrar-modal" id="cerrarModal">&times;</span>
+    <img class="imagen-ampliada" id="imagenAmpliada" src="" alt="Imagen ampliada" />
+  </div>
+</section>
+
+
+<!--:::::::::::::::::::::::::::::::::::::::::::::::-->
+<!--............... Footer........................ -->
+<!--:::::::::::::::::::::::::::::::::::::::::::::::-->
+
+    <footer>
+        <div class="footer-container">
+            <div class="footer-section">
+                <h3>NEOND Store</h3>
+                <a href="https://maps.app.goo.gl/TL8U7bPpWn94exdLA" target="_blank">Nuestra tienda</a>
+                <p>Teléfono: 865 616 65</p>
+                <a href="mailto:neon@info.com">neon@info.com</a>
+                <div class="social-media">
+                    <a href="https://www.instagram.com" target="_blank"><img src="./media/Instagram.png" alt="Instagram"></a>
+                    <a href="https://www.twitter.com" target="_blank"><img src="./media/X Twitter.png" alt="Twitter"></a>
+                    <a href="https://www.facebook.com" target="_blank"><img src="./media/Facebook.png" alt="Facebook"></a>
+                </div>
+            </div>
+            <div class="footer-section">
+                <h3>Productos</h3>
+                <p><a href="./Botas_de_cesped.html">Botín césped</a></p>
+                <p><a href="./Botin_multitaco.html">Botín multitacos</a></p>
+            </div>
+            <div class="footer-section">
+                <h3>Suscríbete</h3>
+                <label for="email">Email</label>
+                <input type="email" id="email" placeholder="Tu correo aquí">
+                <button class="subscribe-btn">SUSCRIBIRSE</button>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>Copyright 2025 NEOND_design by <a href="#">@skirladesign</a></p>
+        </div>
+
+  </footer>
+<!--:::::::::::::::::::::::::::::::::::::::::::::::-->
+<!--............. Finciones de galeria ........... -->
+<!--:::::::::::::::::::::::::::::::::::::::::::::::-->
+
+  <script>
+  const imagenes = document.querySelectorAll('.imagen-galeria');
+  const modal = document.getElementById('modalGaleria');
+  const imagenAmpliada = document.getElementById('imagenAmpliada');
+  const cerrarModal = document.getElementById('cerrarModal');
+
+  imagenes.forEach(imagen => {
+    imagen.addEventListener('click', () => {
+      modal.classList.add('mostrar');
+      imagenAmpliada.src = imagen.src;
+    });
+  });
+
+  cerrarModal.addEventListener('click', () => {
+    modal.classList.remove('mostrar');
+    imagenAmpliada.src = '';
+  });
+
+  window.addEventListener('click', (e) => {
+    if (e.target === modal) {
+      modal.classList.remove('mostrar');
+      imagenAmpliada.src = '';
+    }
+  });
+</script>
+
 </body>
 </html>
 
