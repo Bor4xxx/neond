@@ -63,6 +63,67 @@ nav ul li a {
         font-size: 20px;
     }
 }
+
+/*Carrito de compras */
+
+.carrito-panel {
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 300px;
+  height: 100vh;
+  background-color: #111;
+  color: white;
+  box-shadow: -2px 0 10px rgba(0,0,0,0.4);
+  transform: translateX(100%);
+  transition: transform 0.3s ease;
+  z-index: 9999;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.carrito-panel.visible {
+  transform: translateX(0);
+}
+
+.carrito-header {
+  padding: 1rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid #444;
+}
+
+.cerrar-carrito {
+  background: none;
+  border: none;
+  color: white;
+  font-size: 1.5rem;
+  cursor: pointer;
+}
+
+.carrito-contenido {
+  flex: 1;
+  padding: 1rem;
+  overflow-y: auto;
+}
+
+.carrito-footer {
+  padding: 1rem;
+  border-top: 1px solid #444;
+}
+
+.carrito-footer button {
+  width: 100%;
+  padding: 0.75rem;
+  background-color: #ff3b80;
+  color: black;
+  border: none;
+  border-radius: 8px;
+  font-weight: bold;
+  cursor: pointer;
+}
 /* Banner / Video */
 .banner img{
     src: url('./media/banner_home.png');
@@ -407,15 +468,19 @@ footer {
     flex: 1;
     min-width: 250px;
     margin-bottom: 20px;
+    
 }
 
 /* Títulos */
 .footer-section h3 {
+    
     font-family: "Montserrat",serif;
-    color: #e6005c;
+    color: #ad0d4d;
     font-size: 18px;
     font-weight: bold;
     margin-bottom: 10px;
+    
+    
 }
 
 .footer-section p {
@@ -432,6 +497,7 @@ footer {
     color: white;
     text-decoration: none;
     font-size: 15px;
+    
 }
 
 .footer-section a:hover {
@@ -698,4 +764,266 @@ footer {
     align-items: center;
     justify-content: center;
     text-align: center;
+}
+/*Estilos de pop up */
+
+.popup-overlay {
+  font-family: "Montserrat", serif;
+  position: fixed;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background-color: rgba(0, 0, 0, 0.8);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+}
+
+.popup-content {
+  font-family: "Montserrat", serif;
+  background-color: #d6005a;
+  color: white;
+  text-align: center;
+  padding: 2rem;
+  border-radius: 20px;
+  width: 90%;
+  max-width: 400px;
+  position: relative;
+  animation: fadeIn 0.6s ease-out;
+}
+
+.popup-close {
+  position: absolute;
+  top: 10px;
+  right: 15px;
+  font-size: 1.5rem;
+  cursor: pointer;
+  color: white;
+}
+
+.popup-logo {
+  width: 100%;
+  max-width: 200px;
+  margin-bottom: 1rem;
+}
+
+.popup-descuento {
+  font-family: "Montserrat", serif;
+  font-weight: bold;
+  font-size: 1.2rem;
+  margin-bottom: 1.5rem;
+}
+
+.popup-btn {
+  background: white;
+  color: black;
+  padding: 1rem;
+  border: none;
+  border-radius: 50px;
+  width: 100%;
+  font-weight: bold;
+  cursor: pointer;
+  transition: box-shadow 0.3s ease;
+}
+
+.popup-btn:hover {
+  box-shadow: 0 0 15px 4px #fff;
+}
+
+.popup-text {
+  font-size: 0.9rem;
+  margin: 1.5rem 0;
+}
+
+.popup-login {
+  font-family: "Montserrat", serif;
+  font-weight: bold;
+  background: white;
+  color: black;
+  padding: 1rem;
+  border: none;
+  border-radius: 50px;
+  width: 100%;
+  font-weight: bold;
+  cursor: pointer;
+  margin-bottom: 1rem;
+}
+
+.popup-link a {
+  color: white;
+  font-size: 0.8rem;
+  text-decoration: none;
+}
+
+.popup-icons {
+  display: flex;
+  justify-content: space-around;
+  margin-top: 1rem;
+  gap: 10px;
+}
+
+.popup-icons ion-icon {
+  font-size: 32px; /* Cambia este valor según el tamaño deseado */
+  color: white;    /* Opcional: para asegurar el color blanco */
+}
+
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: scale(0.9); }
+  to { opacity: 1; transform: scale(1); }
+}
+
+@media (max-width: 500px) {
+  .popup-content {
+    padding: 1rem;
+  }
+
+  .popup-btn, .popup-login {
+    padding: 0.8rem;
+    font-size: 0.9rem;
+  }
+
+  .popup-descuento {
+    font-size: 1rem;
+  }
+}
+
+/*Segunda funcionalidad de la2 ventana del pop up */
+
+.popup-overlay {
+  position: fixed;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background-color: rgba(0, 0, 0, 0.8);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+}
+
+.popup-content {
+  background-color: #d6005a;
+  color: white;
+  text-align: center;
+  padding: 2rem;
+  border-radius: 20px;
+  width: 90%;
+  max-width: 400px;
+  position: absolute;
+  animation: fadeIn 0.6s ease-out;
+}
+
+.popup-close {
+  position: absolute;
+  top: 10px;
+  right: 15px;
+  font-size: 1.5rem;
+  cursor: pointer;
+  color: white;
+}
+
+.popup-logo {
+  width: 100%;
+  max-width: 200px;
+  margin-bottom: 1rem;
+}
+
+.popup-descuento {
+  font-weight: bold;
+  font-size: 1.2rem;
+  margin-bottom: 1.5rem;
+}
+
+.popup-btn {
+  background: white;
+  color: black;
+  padding: 1rem;
+  border: none;
+  border-radius: 50px;
+  width: 100%;
+  font-weight: bold;
+  cursor: pointer;
+  transition: box-shadow 0.3s ease, background-color 0.3s ease;
+}
+
+.popup-btn:hover {
+  box-shadow: 0 0 15px 4px #fff;
+  background-color: #a020f0;
+  color: white;
+}
+
+.popup-text {
+  font-size: 0.9rem;
+  margin: 1.5rem 0;
+}
+
+.popup-login {
+  background: white;
+  color: black;
+  padding: 1rem;
+  border: none;
+  border-radius: 50px;
+  width: 100%;
+  font-weight: bold;
+  cursor: pointer;
+  margin-bottom: 1rem;
+}
+
+.popup-link a {
+  color: white;
+  font-size: 0.8rem;
+  text-decoration: none;
+}
+
+.popup-icons {
+  display: flex;
+  justify-content: space-around;
+  margin-top: 1rem;
+  font-size: 30px;
+  color: white;
+}
+
+.popup-icons ion-icon {
+  font-size: 32px;
+  color: white;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="tel"] {
+  width: 100%;
+  padding: 0.8rem;
+  margin: 0.5rem 0;
+  border: none;
+  border-radius: 10px;
+  font-size: 1rem;
+}
+
+.hidden {
+  display: none;
+}
+
+.slide {
+  animation: slideIn 0.5s forwards;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: scale(0.9); }
+  to { opacity: 1; transform: scale(1); }
+}
+
+@keyframes slideIn {
+  from { opacity: 0; transform: translateY(40px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@media (max-width: 500px) {
+  .popup-content {
+    padding: 1rem;
+  }
+  .popup-btn, .popup-login {
+    padding: 0.8rem;
+    font-size: 0.9rem;
+  }
+  .popup-descuento {
+    font-size: 1rem;
+  }
 }

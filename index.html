@@ -15,6 +15,8 @@
         <link rel="icon" type="image/x-icon" href="./media/Fav_icon-blanco.png">
         <title>NEOND</title>
         <link rel="stylesheet" href="styles.css">
+        <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+        <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
     </head>
 
 <body>
@@ -41,13 +43,29 @@
                 <li><a href="#login">Inicia Sesión</a></li>
                 </div>
                 <div class="boton_color">
-                <li><a href="#carrito"><img 
-                    class="carro_de_compras" src="./media/carrito_decompras-03.png" width="30" height="30" alt="Carrito"></a></li>
+                <li><a href="#" onclick="abrirCarrito(); return false;"><ion-icon name="cart-outline" style="font-size: 28px;"></ion-icon></a></li>
                 </div>
             </ul>
         </nav>
-        
     </header>
+
+    <!--:::::::::::::::::::::::::::::::::::::::::::::::-->
+    <!--.............. Carrito de compras ............ -->
+    <!--:::::::::::::::::::::::::::::::::::::::::::::::-->
+
+    <div id="carrito-panel" class="carrito-panel oculto">
+        <div class="carrito-header">
+            <h2>Tu carrito</h2>
+            <button class="cerrar-carrito" onclick="cerrarCarrito()">×</button>
+        </div>
+        <div class="carrito-contenido" id="carrito-contenido">
+            <p>No hay productos en el carrito.</p>
+        </div>
+        <div class="carrito-footer">
+            <div id="total-pagar" style="margin-bottom: 1rem; font-weight: bold;">Total: 0€</div>
+            <button onclick="finalizarCompra()">Finalizar compra</button>
+        </div>
+        </div>
     
         <!--:::::::::::::::::::::::::::::::::::::::::::::::-->
         <!--............... Banner ....................... -->
@@ -100,8 +118,8 @@
         <div class="text-block">
             <h2 class="highlight">NEOND STORE</h2>
             <h3 class="title">Visítanos!</h3>
-            <p class="description">Encuentra la mejor selección de botines y accesorios.<br>
-                ¡Ubica tu tienda más cercana y vive la experiencia!</p>
+            <p class="description">Encuentra la mejor seleccón de botas de fútbol infantil. <br>
+                ¡Descubre tu tienda más cercana y vive la experiencia <strong>NEOND!</strong></p>
                 <a class="btn enlace-conocenos" href="./Tienda.html" target="_blank">TIENDA</a>
 
         </div>
@@ -159,8 +177,8 @@
             </div>
             <div class="footer-section">
                 <h3>Productos</h3>
-                <p><a href="./Botas_de_cesped.html">Bota de futbol tacos </a></p>
-                <p><a href="./Botin_multitaco.html">Bota de futbol multitacos</a></p>
+                <p><a href="./Botas_de_cesped.html">Botas de fútbol tacos </a></p>
+                <p><a href="./Botin_multitaco.html">Botas de fútbol multitacos</a></p>
             </div>
             <div class="footer-section">
                 <h3>Suscríbete</h3>
@@ -300,5 +318,243 @@
                 document.getElementById('cookie-bar').style.display = 'none';
                 }
             </script>
+
+<!--:::::::::::::::::::::::::::::::::::::::::::::::-->
+<!--........ POP UP DE INICIO DE SUSCRIPCIÓN.......-->
+<!--:::::::::::::::::::::::::::::::::::::::::::::::-->
+
+        <!-- Popup HTML (incluir esto al final del body principal) -->
+        <div id="neond-popup" class="popup-overlay" onclick="cerrarPopup(event)">
+        <!-- Primera ventana -->
+        <div class="popup-content" id="popup-step-1">
+            <span class="popup-close" onclick="cerrarPopupManual(event)">&times;</span>
+            <img src="./media/Logo_NEOND_negro.png" alt="Logo NEOND" class="popup-logo" />
+            <p class="popup-descuento">TIENES UN 10% DE DESCUENTO<br>EN TU PRIMERA COMPRA</p>
+            <button class="popup-btn" onclick="mostrarPaso2()">SUSCRIBIRSE</button>
+            <p class="popup-text">suscríbete a nuestra newsletter y no te pierdas nada.<br><br>
+            serás de los primeros en conocer las últimas novedades,<br>
+            eventos exclusivos y ofertas sólo para miembros.</p>
+            <button class="popup-login" onclick="iniciarSesion()">INICIA SESIÓN</button>
+            <p class="popup-link"><a href="#">¿olvidaste la contraseña?</a></p>
+            <div class="popup-icons">
+            <ion-icon name="logo-facebook"></ion-icon>
+            <ion-icon name="logo-instagram"></ion-icon>
+            <ion-icon name="logo-tiktok"></ion-icon>
+            </div>
+        </div>
+
+        <!-- Segunda ventana (formulario) -->
+        <div class="popup-content hidden slide" id="popup-step-2">
+            <span class="popup-close" onclick="cerrarPopupManual(event)">&times;</span>
+            <img src="./media/Logo_NEOND_negro.png" alt="Logo NEOND" class="popup-logo" />
+            <p class="popup-descuento">DISFRUTA DE UN 10% DE DESCUENTO<br>EN TU PRIMERA COMPRA</p>
+            <p class="popup-text">Inscríbete a nuestro boletín y obtén un 15 % de DESCUENTO** en tu primer pedido. Mantente al día con los últimos lanzamientos, eventos exclusivos y ofertas especiales.***</p>
+            <input type="email" placeholder="Correo electrónico">
+            <input type="text" placeholder="Nombre" id="nombre-input">
+            <input type="text" placeholder="Apellidos">
+            <input type="tel" placeholder="Teléfono">
+            <button class="popup-btn" onclick="mostrarPaso3()">CREAR CUENTA</button>
+            <label style="font-size: 0.8rem; display: block; margin: 1rem auto; text-align: left; color: white">
+            <input type="checkbox"> Sí, quiero enterarme de las últimas ofertas especiales, lanzamientos de productos y más a través de anuncios personalizados en plataformas digitales como Google o Facebook por medio de mi correo electrónico. Ver nuestra Política de privacidad.
+            </label>
+            <p style="font-size: 0.7rem; text-align: left; color: white">***Al hacer clic en «QUIERO MI 10 % DE DTO» das tu consentimiento para que NEOND trate tus datos personales... Todos los campos marcados con asterisco (*) son obligatorios.</p>
+        </div>
+
+        <!-- Tercera ventana (mensaje personalizado) -->
+        <div class="popup-content hidden slide" id="popup-step-3">
+            <span class="popup-close" onclick="cerrarPopupManual(event)">&times;</span>
+            <img src="./media/Logo_NEOND_negro.png" alt="Logo NEOND" class="popup-logo" />
+            <p class="popup-descuento" style="margin-top: 1rem;">
+            ¡<span id="nombre-usuario"></span>, bienvenid@ al universo NEOND!<br>
+            Acabas de desbloquear tu 10% de descuento.
+            </p>
+            <p class="popup-text">Prepárate para llevar tu juego al siguiente nivel.</p>
+            <button class="popup-btn" onclick="cerrarPopupManual(event)">Continuar</button>
+        </div>
+        </div>
+
+<script>
+  function mostrarPaso2() {
+    document.getElementById('popup-step-1').classList.add('hidden');
+    document.getElementById('popup-step-2').classList.remove('hidden');
+  }
+
+  function mostrarPaso3() {
+    const nombre = document.getElementById("nombre-input").value;
+    document.getElementById("popup-step-2").classList.add("hidden");
+    document.getElementById("nombre-usuario").textContent = nombre;
+    document.getElementById("popup-step-3").classList.remove("hidden");
+  }
+
+  function iniciarSesion() {
+    alert("Aquí iría el login real");
+  }
+
+  function cerrarPopup(event) {
+    if (event.target.id === 'neond-popup') {
+      document.getElementById('neond-popup').style.display = 'none';
+    }
+  }
+
+  function cerrarPopupManual(event) {
+    event.stopPropagation();
+    document.getElementById('neond-popup').style.display = 'none';
+  }
+</script>
+
+<!-- Ionicons para los iconos sociales -->
+<script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+<script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+
+<!--:::::::::::::::::::::::::::::::::::::::::::::::-->
+<!--...... FUNCIONALIDAD DE POP UP JAVASCRIPT......-->
+<!--:::::::::::::::::::::::::::::::::::::::::::::::-->
+
+    <script>
+        window.addEventListener('load', function () {
+            setTimeout(() => {
+            document.getElementById('neond-popup').style.display = 'flex';
+            }, 800); // espera 800ms
+        });
+
+        function suscribirse() {
+            alert("¡Gracias por suscribirte! (aquí podrías abrir otro paso del popup o redirigir)");
+        }
+
+        function iniciarSesion() {
+            alert("Aquí iría el login real");
+        }
+
+        function cerrarPopup(event) {
+            if (event.target.id === 'neond-popup') {
+            document.getElementById('neond-popup').style.display = 'none';
+            }
+        }
+
+        function cerrarPopupManual(event) {
+            event.stopPropagation();
+            document.getElementById('neond-popup').style.display = 'none';
+        }
+    </script>
+
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+
+    <!--Funcionalidad de pop up segunda ventana -->
+
+    <script>
+        window.addEventListener('load', function () {
+            setTimeout(() => {
+            document.getElementById('neond-popup').style.display = 'flex';
+            }, 800);
+        });
+
+        function mostrarPaso2() {
+            document.getElementById('popup-step-1').classList.add('hidden');
+            document.getElementById('popup-step-2').classList.remove('hidden');
+        }
+
+        function mostrarPaso3() {
+            alert("Simulación: Enviar datos y abrir siguiente ventana");
+        }
+
+        function iniciarSesion() {
+            alert("Aquí iría el login real");
+        }
+
+        function cerrarPopup(event) {
+            if (event.target.id === 'neond-popup') {
+            document.getElementById('neond-popup').style.display = 'none';
+            }
+        }
+
+        function cerrarPopupManual(event) {
+            event.stopPropagation();
+            document.getElementById('neond-popup').style.display = 'none';
+        }
+    </script>
+
+    <!-- Ionicons para los iconos sociales -->
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+
+    <script>
+    function mostrarPaso3() {
+        const nombre = document.getElementById("nombre-input").value;
+        document.getElementById("popup-step-2").classList.add("hidden");
+        document.getElementById("nombre-usuario").textContent = nombre;
+        document.getElementById("popup-step-3").classList.remove("hidden");
+    }
+    </script>
+
+    <!--:::::::::::::::::::::::::::::::::::::::::::::::-->
+    <!--.............. Funcionalidad carrito ......... -->
+    <!--:::::::::::::::::::::::::::::::::::::::::::::::-->
+
+        <script>
+        let carrito = [];
+
+        function abrirCarrito() {
+        document.getElementById('carrito-panel').classList.add('visible');
+        renderizarCarrito();
+        }
+
+        function cerrarCarrito() {
+        document.getElementById('carrito-panel').classList.remove('visible');
+        }
+
+        function agregarAlCarrito(producto) {
+        carrito.push(producto);
+        renderizarCarrito();
+        }
+
+        function renderizarCarrito() {
+        const contenido = document.getElementById('carrito-contenido');
+        const total = document.getElementById('total-pagar');
+
+        if (carrito.length === 0) {
+            contenido.innerHTML = '<p>No hay productos en el carrito.</p>';
+            total.textContent = 'Total: 0€';
+            return;
+        }
+
+        let html = '';
+        let totalPagar = 0;
+
+        carrito.forEach(item => {
+            const subtotal = item.precio * item.cantidad;
+            totalPagar += subtotal;
+            html += `
+            <div class="item-carrito">
+                <img src="${item.imagen}" alt="${item.nombre}" />
+                <div class="info">
+                <div><strong>${item.nombre}</strong></div>
+                <div>Talla: ${item.talla}</div>
+                <div>Cantidad: ${item.cantidad}</div>
+                <div>${subtotal.toFixed(2)}€</div>
+                </div>
+            </div>
+            `;
+        });
+
+        contenido.innerHTML = html;
+        total.textContent = `Total: ${totalPagar.toFixed(2)}€`;
+        }
+
+        function finalizarCompra() {
+        const contenido = document.getElementById('carrito-contenido');
+        document.getElementById('total-pagar').textContent = '';
+        contenido.innerHTML = `
+            <div style="text-align:center; padding:2rem;">
+            <h3>🎉 ¡Gracias por tu compra!</h3>
+            <p>Tu pedido ha sido simulado con éxito.</p>
+            <button onclick="cerrarCarrito()" style="margin-top:1rem; background:#00ffa6; padding:0.5rem 1rem; border:none; border-radius:6px; cursor:pointer; font-weight:bold;">Volver a la tienda</button>
+            </div>
+        `;
+        carrito = [];
+        }
+        </script>
+
+
 </body>
 </html>

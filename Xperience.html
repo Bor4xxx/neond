@@ -11,8 +11,8 @@
   <link rel="stylesheet" href="styles.css" />
   <link rel="stylesheet" href="botas_cesped.css" />
   <link rel="stylesheet" href="Xperience_styles.css" />
-
-
+  <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+  <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
 </head>
   
 <body>
@@ -28,15 +28,33 @@
         <div class="boton_color"><li><a href="Entrevistas.html">Entrevistas</a></li></div>
         <div class="boton_color"><li><a href="#login">Blog</a></li></div>
         <div class="boton_color">
-          <li><a href="#carrito"><img class="carro_de_compras" src="./media/carrito_decompras-03.png" width="30" height="30" alt="Carrito" /></a></li>
+        <li><a href="#" onclick="abrirCarrito(); return false;"><ion-icon name="cart-outline" style="font-size: 28px;"></ion-icon></a></li>
         </div>
       </ul>
     </nav>
   </header>
 
-  <!--:::::::::::::::::::::::::::::::::::::::::::::::-->
-  <!--............... Seccion de Valores ........... -->
-  <!--:::::::::::::::::::::::::::::::::::::::::::::::-->
+    <!--:::::::::::::::::::::::::::::::::::::::::::::::-->
+    <!--.............. Carrito de compras ............ -->
+    <!--:::::::::::::::::::::::::::::::::::::::::::::::-->
+
+    <div id="carrito-panel" class="carrito-panel oculto">
+        <div class="carrito-header">
+            <h2>Tu carrito</h2>
+            <button class="cerrar-carrito" onclick="cerrarCarrito()">×</button>
+        </div>
+        <div class="carrito-contenido" id="carrito-contenido">
+            <p>No hay productos en el carrito.</p>
+        </div>
+        <div class="carrito-footer">
+            <div id="total-pagar" style="margin-bottom: 1rem; font-weight: bold;">Total: 0€</div>
+            <button onclick="finalizarCompra()">Finalizar compra</button>
+        </div>
+        </div>
+
+<!--:::::::::::::::::::::::::::::::::::::::::::::::-->
+<!--............... Seccion de Valores ........... -->
+<!--:::::::::::::::::::::::::::::::::::::::::::::::-->
 
 <section class="seccion-valores-final">
   <div class="contenedor-valores-final">
@@ -99,8 +117,8 @@
             </div>
             <div class="footer-section">
                 <h3>Productos</h3>
-                <p><a href="./Botas_de_cesped.html">Botín césped</a></p>
-                <p><a href="./Botin_multitaco.html">Botín multitacos</a></p>
+                <p><a href="./Botas_de_cesped.html">Botas de fútbol tacos </a></p>
+                <p><a href="./Botin_multitaco.html">Botas de fútbol multitacos</a></p>
             </div>
             <div class="footer-section">
                 <h3>Suscríbete</h3>
@@ -143,6 +161,75 @@
     }
   });
 </script>
+
+    <!--:::::::::::::::::::::::::::::::::::::::::::::::-->
+    <!--.............. Funcionalidad carrito .......... -->
+    <!--:::::::::::::::::::::::::::::::::::::::::::::::-->
+
+    <!-- Funcionalidad JavaScript -->
+    <script>
+    let carrito = [];
+
+    function abrirCarrito() {
+      document.getElementById('carrito-panel').classList.add('visible');
+      renderizarCarrito();
+    }
+
+    function cerrarCarrito() {
+      document.getElementById('carrito-panel').classList.remove('visible');
+    }
+
+    function agregarAlCarrito(producto) {
+      carrito.push(producto);
+      renderizarCarrito();
+    }
+
+    function renderizarCarrito() {
+      const contenido = document.getElementById('carrito-contenido');
+      const total = document.getElementById('total-pagar');
+
+      if (carrito.length === 0) {
+        contenido.innerHTML = '<p>No hay productos en el carrito.</p>';
+        total.textContent = 'Total: 0€';
+        return;
+      }
+
+      let html = '';
+      let totalPagar = 0;
+
+      carrito.forEach(item => {
+        const subtotal = item.precio * item.cantidad;
+        totalPagar += subtotal;
+        html += `
+          <div class="item-carrito">
+            <img src="${item.imagen}" alt="${item.nombre}" />
+            <div class="info">
+              <div><strong>${item.nombre}</strong></div>
+              <div>Talla: ${item.talla}</div>
+              <div>Cantidad: ${item.cantidad}</div>
+              <div>${subtotal.toFixed(2)}€</div>
+            </div>
+          </div>
+        `;
+      });
+
+      contenido.innerHTML = html;
+      total.textContent = `Total: ${totalPagar.toFixed(2)}€`;
+    }
+
+    function finalizarCompra() {
+      const contenido = document.getElementById('carrito-contenido');
+      document.getElementById('total-pagar').textContent = '';
+      contenido.innerHTML = `
+        <div style="text-align:center; padding:2rem;">
+          <h3>🎉 ¡Gracias por tu compra!</h3>
+          <p>Tu pedido ha sido simulado con éxito.</p>
+          <button onclick="cerrarCarrito()" style="margin-top:1rem; background:#00ffa6; padding:0.5rem 1rem; border:none; border-radius:6px; cursor:pointer; font-weight:bold;">Volver a la tienda</button>
+        </div>
+      `;
+      carrito = [];
+    }
+    </script>
 
 </body>
 </html>

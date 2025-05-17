@@ -28,10 +28,139 @@ html {
   height: auto;
 
 }
+/*Carrito de panel*/
 
-.carro_de_compras {
-    filter: brightness(1);
+.carrito-panel {
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 300px;
+  height: 100vh;
+  background-color: #111;
+  color: white;
+  box-shadow: -2px 0 10px rgba(0,0,0,0.4);
+  transform: translateX(100%);
+  transition: transform 0.3s ease;
+  z-index: 9999;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
+
+.carrito-panel.visible {
+  transform: translateX(0);
+}
+
+.carrito-header {
+  padding: 1rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid #444;
+}
+
+.cerrar-carrito {
+  background: none;
+  border: none;
+  color: white;
+  font-size: 1.5rem;
+  cursor: pointer;
+}
+
+.carrito-contenido {
+  flex: 1;
+  padding: 1rem;
+  overflow-y: auto;
+}
+
+.carrito-footer {
+  padding: 1rem;
+  border-top: 1px solid #444;
+}
+
+.carrito-footer button {
+  width: 100%;
+  padding: 0.75rem;
+  background-color: #ff3b80;
+  color: black;
+  border: none;
+  border-radius: 8px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.item-carrito {
+  display: flex;
+  align-items: center;
+  margin-bottom: 1rem;
+  border-bottom: 1px solid #444;
+  padding-bottom: 0.5rem;
+}
+.item-carrito img {
+  width: 50px;
+  height: auto;
+  margin-right: 10px;
+  border-radius: 6px;
+  object-fit: cover;
+}
+.item-carrito .info {
+  flex: 1;
+  font-size: 0.85rem;
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+}
+.item-carrito .info div {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+.item-carrito .eliminar {
+  background: none;
+  border: none;
+  color: #ff3b80;
+  font-size: 1.1rem;
+  cursor: pointer;
+  padding-left: 6px;
+}
+
+.item-carrito {
+  display: flex;
+  align-items: center;
+  margin-bottom: 1rem;
+  border-bottom: 1px solid #444;
+  padding-bottom: 0.5rem;
+}
+.item-carrito img {
+  width: 50px;
+  height: auto;
+  margin-right: 10px;
+  border-radius: 6px;
+  object-fit: cover;
+}
+.item-carrito .info {
+  flex: 1;
+  font-size: 0.85rem;
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+}
+.item-carrito .info div {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+.item-carrito .eliminar {
+  background: none;
+  border: none;
+  color: #ff3b80;
+  font-size: 1.1rem;
+  cursor: pointer;
+  padding-left: 6px;
+}
+/*.carro_de_compras {
+    filter: brightness(1);
+}*/
      
 /* Sección de botines */
 
@@ -234,35 +363,124 @@ span {
   font-weight: bold;
 }
 .tallas-header {
+  
   display: flex;
   justify-content: space-between;
   margin: 30px 0 10px;
   font-size: 14px;
 }
 
+.tallas-header span {
+  color: #ff3b80; /* Color para la palabra 'Tallas' */
+  font-weight: bold;
+}
+
+.tallas-header a {
+  font-family: "Montserrat", sans-serif;
+  color: #e9d500; /* Color para el enlace 'Guía de tallas' */
+  text-decoration: underline; /* Opcional: subrayado */
+  font-weight: 500;
+}
+
+
+/*Selector de tallas */
+
 .grid-tallas {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 10px;
+  grid-template-columns: repeat(auto-fit, minmax(40px, 1fr));
+  gap: 8px;
+  margin-top: 1rem;
 }
 
 .grid-tallas button {
-  background: #000;
+  padding: 0.6rem 0;
+  font-size: 0.85rem;
   border: 2px solid #ff3b80;
+  border-radius: 8px;
+  background-color: black;
   color: white;
-  padding: 10px;
-  border-radius: 10px;
-  font-size: 14px;
-  cursor: pointer;
+  font-weight: 500;
+  transition: all 0.3s ease;
 }
 
-/* *Funciond e Javascript que mantiene activo el boton de tallas */
+/*Tallas para movil*/
 
+@media (max-width: 500px) {
+  .grid-tallas {
+    grid-template-columns: repeat(5, 1fr);
+    gap: 6px;
+  }
+
+  .grid-tallas button {
+    padding: 0.5rem 0;
+    font-size: 0.75rem;
+  }
+}
+
+/*Tamaño de iconos de devoluciones*/
+
+ion-icon {
+  font-size: 20px; /* Ajusta el tamaño a lo que necesites */
+  vertical-align: middle; /* Opcional para que esté alineado con el texto */
+  margin-right: 8px; /* Espacio entre icono y texto */
+  color: #ffffff; /* Si quieres darles color */
+}
+
+.grid-tallas button:hover,
 .grid-tallas button.talla-activa {
-  background: #ff3b80;
-  color: #000;
-  border-color: #fff;
+  background-color: #ff3b80;
+  color: black;
+  font-weight: bold;
+  box-shadow: 0 0 8px #ff3b80;
 }
+
+/*Boton de cantida de compra*/
+
+.cantidad-producto {
+  margin: 20px 0;
+  text-align: left;
+}
+
+.label-cantidad {
+  display: block;
+  font-weight: bold;
+  margin-bottom: 8px;
+  color: #ff3b80;
+}
+
+.control-cantidad {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.control-cantidad button {
+  background-color: #000;
+  color: #fff;
+  border: 2px solid #ff3b80;
+  border-radius: 6px;
+  width: 32px;
+  height: 32px;
+  font-size: 18px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.control-cantidad button:hover {
+  background-color: #ff3b80;
+  color: #000;
+}
+
+.control-cantidad input {
+  width: 50px;
+  text-align: center;
+  font-size: 16px;
+  font-weight: bold;
+  border: none;
+  background: transparent;
+  color: white;
+}
+
 
 /*Modal de botas de cesped*/
 

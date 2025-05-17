@@ -15,6 +15,8 @@
         <title>NEOND - Multitaco</title>
         <link rel="stylesheet" href="styles.css">
         <link rel="stylesheet" href="botin_multitaco.css">
+        <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script> <!--Importacionde iconos-->
+        <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
     </head>
     
 <body>
@@ -41,16 +43,33 @@
                 <li><a href="#login">Inicia Sesión</a></li>
                 </div>
                 <div class="boton_color">
-                <li><a href="#carrito"><img 
-                    class="carro_de_compras" src="./media/carrito_decompras-03.png" width="30" height="30" alt="Carrito"></a></li>
+                <div class="boton_color">
+                <li><a href="#" onclick="abrirCarrito(); return false;"><ion-icon name="cart-outline" style="font-size: 28px;"></ion-icon><span id="badge-carrito" style="background:#ff3b80; color:white; font-size:0.7rem; border-radius:50%; padding:2px 6px; margin-left:4px; vertical-align:top; display:inline-block;">0</span></a></li>
                 </div>
             </ul>
         </nav>
 </header>
 
     <!--:::::::::::::::::::::::::::::::::::::::::::::::-->
-    <!--............ Seccion de botines .............. -->
+    <!--.............. Carrito de compras ............ -->
     <!--:::::::::::::::::::::::::::::::::::::::::::::::-->
+
+    <div id="carrito-panel" class="carrito-panel oculto">
+      <div class="carrito-header">
+        <h2>Tu carrito <span id="contador-carrito" style="font-size: 0.8rem; font-weight: normal;"></span></h2>
+        <button class="cerrar-carrito" onclick="cerrarCarrito()">×</button>
+      </div>
+      <div class="carrito-contenido" id="carrito-contenido">
+        <p>No hay productos en el carrito.</p>
+      </div>
+      <div class="carrito-footer">
+        <div id="total-pagar" style="margin-bottom: 1rem; font-weight: bold;">Total: 0€</div>
+        <button onclick="finalizarCompra()">Finalizar compra</button>
+      </div>
+    </div>
+<!--:::::::::::::::::::::::::::::::::::::::::::::::-->
+<!--............ Seccion de botines .............. -->
+<!--:::::::::::::::::::::::::::::::::::::::::::::::-->
 
         <section class="botines">
             <div class="botin" id="botin1">
@@ -81,7 +100,7 @@
 
 <section class="gama-multitaco-basica" id="botin-g-yellow">
     <div class="galeria">
-        <img id="imagen-activa-yellow" src="./media/Galeria_Botines_de_cesped/Generation_One_Vista_1.png" alt="G-YELLOW" />
+        <img id="imagen-activa-yellow" src="./media/Galeria_multitaco/G-YELLOW_VISTA_1.png" alt="G-YELLOW" />
     <div class="puntos-galeria">
         <span class="punto activo" onclick="cambiarImagenGONE(0)"></span>
         <span class="punto" onclick="cambiarImagenGONE(1)"></span>
@@ -110,6 +129,15 @@
         <a href="#" onclick="abrirGuia(event)">Guía de tallas</a>
       </div>
             <div class="grid-tallas">
+              <button onclick="seleccionarTalla(this)">21</button>
+              <button onclick="seleccionarTalla(this)">22</button>
+              <button onclick="seleccionarTalla(this)">23</button>
+              <button onclick="seleccionarTalla(this)">24</button>
+              <button onclick="seleccionarTalla(this)">25</button>
+              <button onclick="seleccionarTalla(this)">26</button>
+              <button onclick="seleccionarTalla(this)">27</button>
+              <button onclick="seleccionarTalla(this)">28</button>
+              <button onclick="seleccionarTalla(this)">29</button>
               <button onclick="seleccionarTalla(this)">30</button>
               <button onclick="seleccionarTalla(this)">31</button>
               <button onclick="seleccionarTalla(this)">32</button>
@@ -120,14 +148,115 @@
               <button onclick="seleccionarTalla(this)">37</button>
             </div>
           </div>
-          
-          <button class="btn-carrito">AGREGAR AL CARRITO</button>
-      
-          <ul class="beneficios">
-            <li><img src="./media/Galeria_Botines_de_cesped/Icono_envio.png" /> Envío Gratis a partir de 150€</li>
-            <li><img src="./media/Galeria_Botines_de_cesped/Icono_Pago.png" /> Paga seguro, puedes pagar en línea</li>
-            <li><img src="./media/Galeria_Botines_de_cesped/Icono_devolución.png" /> Devoluciones hasta 60 días</li>
-          </ul>
+
+        <button class="btn-carrito"
+          onclick="agregarAlCarritoDesdeProducto(
+            'G-YELLOW',
+            './media/Galeria_multitaco/G-YELLOW_Carro.png',
+            65
+          )">
+          AGREGAR AL CARRITO
+        </button>
+
+        <script>
+
+        function abrirCarrito() {
+          document.getElementById('carrito-panel').classList.add('visible');
+          renderizarCarrito();
+        }
+
+        function cerrarCarrito() {
+          document.getElementById('carrito-panel').classList.remove('visible');
+        }
+
+        function agregarAlCarrito(producto) {
+          carrito.push(producto);
+          renderizarCarrito();
+        }
+
+        function agregarAlCarritoDesdeProducto(nombre, imagen, precio) {
+          const contenedor = event.target.closest('.info-producto');
+          const tallaBtn = contenedor.querySelector('.grid-tallas button.talla-activa');
+          const cantidadInput = contenedor.querySelector('.control-cantidad .cantidad');
+
+          if (!tallaBtn || !cantidadInput) {
+            alert("Selecciona una talla y cantidad válida.");
+            return;
+          }
+
+          const talla = tallaBtn.textContent;
+          const cantidad = parseInt(cantidadInput.value);
+
+          agregarAlCarrito({ nombre, talla, cantidad, precio, imagen });
+          abrirCarrito();
+        }
+
+        function renderizarCarrito() {
+          const contenido = document.getElementById('carrito-contenido');
+          const total = document.getElementById('total-pagar');
+
+          if (carrito.length === 0) {
+            contenido.innerHTML = '<p>No hay productos en el carrito.</p>';
+            total.textContent = 'Total: 0€';
+            return;
+          }
+
+          let html = '';
+          let totalPagar = 0;
+
+          carrito.forEach(item => {
+            const subtotal = item.precio * item.cantidad;
+            totalPagar += subtotal;
+            html += `
+              <div class="item-carrito">
+                <img src="${item.imagen}" alt="${item.nombre}" />
+                <div class="info">
+                  <div><strong>${item.nombre}</strong></div>
+                  <div>Talla: ${item.talla}</div>
+                  <div>Cantidad: ${item.cantidad}</div>
+                  <div>${subtotal.toFixed(2)}€</div>
+                </div>
+              </div>
+            `;
+          });
+
+          contenido.innerHTML = html;
+          total.textContent = `Total: ${totalPagar.toFixed(2)}€`;
+        }
+
+        function finalizarCompra() {
+          const contenido = document.getElementById('carrito-contenido');
+          document.getElementById('total-pagar').textContent = '';
+          contenido.innerHTML = `
+            <div style="text-align:center; padding:2rem;">
+              <h3>🎉 ¡Gracias por tu compra!</h3>
+              <p>Tu pedido ha sido simulado con éxito.</p>
+              <button onclick="cerrarCarrito()" style="margin-top:1rem; background:#00ffa6; padding:0.5rem 1rem; border:none; border-radius:6px; cursor:pointer; font-weight:bold;">Volver a la tienda</button>
+            </div>
+          `;
+          carrito = [];
+        }
+        </script>
+
+
+        <!--boton de agregar al carrito-->
+        <div class="cantidad-producto">
+          <span class="label-cantidad">Cantidad</span>
+        <div class="control-cantidad">
+            <button onclick="cambiarCantidad(this, -1)">-</button>
+            <input type="text" class="cantidad" value="1" readonly>
+            <button onclick="cambiarCantidad(this, 1)">+</button>
+        </div>
+        </div>
+
+        <ul class="beneficios" id="beneficios-yellow">
+
+        <!--iconos de envio y devoluciones-->
+        <li><ion-icon name="airplane"></ion-icon> Envío Gratis a partir de 150€</li>
+        <li><ion-icon name="card"></ion-icon> Paga seguro, puedes pagar en línea</li>
+        <li><ion-icon name="cube"></ion-icon> Devoluciones hasta 60 días</li>
+        </ul>
+
         </div>
 </section>
 
@@ -137,11 +266,12 @@
 
     <section class="gama-multitaco-media" id="botin-g-green">
         <div class="galeria">
-        <img id="imagen-activa-green" src="./media/Galeria_Botines_de_cesped/Generation_Green_Vista_1.png" alt="G-GREEN II" />
+        <img id="imagen-activa-green" src="./media/Galeria_multitaco/G-GREEN2_VISTA_1.png" alt="G-GREEN II" />
     <div class="puntos-galeria">
         <span class="punto activo" onclick="cambiarImagenGGREEN(0)"></span>
         <span class="punto" onclick="cambiarImagenGGREEN(1)"></span>
         <span class="punto" onclick="cambiarImagenGGREEN(2)"></span>
+
     </div>
   </div>
     
@@ -166,96 +296,302 @@
             <span>Tallas</span>
             <a href="#" onclick="abrirGuia(event)">Guía de tallas</a>
           </div>
-          <div class="grid-tallas">
-            <button onclick="seleccionarTalla(this)">30</button>
-            <button onclick="seleccionarTalla(this)">31</button>
-            <button onclick="seleccionarTalla(this)">32</button>
-            <button onclick="seleccionarTalla(this)">33</button>
-            <button onclick="seleccionarTalla(this)">34</button>
-            <button onclick="seleccionarTalla(this)">35</button>
-            <button onclick="seleccionarTalla(this)">36</button>
-            <button onclick="seleccionarTalla(this)">37</button>
-          </div>
+         <div class="grid-tallas">
+              <button onclick="seleccionarTalla(this)">21</button>
+              <button onclick="seleccionarTalla(this)">22</button>
+              <button onclick="seleccionarTalla(this)">23</button>
+              <button onclick="seleccionarTalla(this)">24</button>
+              <button onclick="seleccionarTalla(this)">25</button>
+              <button onclick="seleccionarTalla(this)">26</button>
+              <button onclick="seleccionarTalla(this)">27</button>
+              <button onclick="seleccionarTalla(this)">28</button>
+              <button onclick="seleccionarTalla(this)">29</button>
+              <button onclick="seleccionarTalla(this)">30</button>
+              <button onclick="seleccionarTalla(this)">31</button>
+              <button onclick="seleccionarTalla(this)">32</button>
+              <button onclick="seleccionarTalla(this)">33</button>
+              <button onclick="seleccionarTalla(this)">34</button>
+              <button onclick="seleccionarTalla(this)">35</button>
+              <button onclick="seleccionarTalla(this)">36</button>
+              <button onclick="seleccionarTalla(this)">37</button>
+            </div>
         </div>
         
-    
-        <button class="btn-carrito">AGREGAR AL CARRITO</button>
+        <button class="btn-carrito"
+          onclick="agregarAlCarritoDesdeProducto(
+            'G-YELLOW',
+            './media/Galeria_multitaco/G-GREEN2_Carro.png',
+            65
+          )">
+          AGREGAR AL CARRITO
+        </button>
+
+        <script>
+
+        function abrirCarrito() {
+          document.getElementById('carrito-panel').classList.add('visible');
+          renderizarCarrito();
+        }
+
+        function cerrarCarrito() {
+          document.getElementById('carrito-panel').classList.remove('visible');
+        }
+
+        function agregarAlCarrito(producto) {
+          carrito.push(producto);
+          renderizarCarrito();
+        }
+
+        function agregarAlCarritoDesdeProducto(nombre, imagen, precio) {
+          const contenedor = event.target.closest('.info-producto');
+          const tallaBtn = contenedor.querySelector('.grid-tallas button.talla-activa');
+          const cantidadInput = contenedor.querySelector('.control-cantidad .cantidad');
+
+          if (!tallaBtn || !cantidadInput) {
+            alert("Selecciona una talla y cantidad válida.");
+            return;
+          }
+
+          const talla = tallaBtn.textContent;
+          const cantidad = parseInt(cantidadInput.value);
+
+          agregarAlCarrito({ nombre, talla, cantidad, precio, imagen });
+          abrirCarrito();
+        }
+
+        function renderizarCarrito() {
+          const contenido = document.getElementById('carrito-contenido');
+          const total = document.getElementById('total-pagar');
+
+          if (carrito.length === 0) {
+            contenido.innerHTML = '<p>No hay productos en el carrito.</p>';
+            total.textContent = 'Total: 0€';
+            return;
+          }
+
+          let html = '';
+          let totalPagar = 0;
+
+          carrito.forEach(item => {
+            const subtotal = item.precio * item.cantidad;
+            totalPagar += subtotal;
+            html += `
+              <div class="item-carrito">
+                <img src="${item.imagen}" alt="${item.nombre}" />
+                <div class="info">
+                  <div><strong>${item.nombre}</strong></div>
+                  <div>Talla: ${item.talla}</div>
+                  <div>Cantidad: ${item.cantidad}</div>
+                  <div>${subtotal.toFixed(2)}€</div>
+                </div>
+              </div>
+            `;
+          });
+
+          contenido.innerHTML = html;
+          total.textContent = `Total: ${totalPagar.toFixed(2)}€`;
+        }
+
+        function finalizarCompra() {
+          const contenido = document.getElementById('carrito-contenido');
+          document.getElementById('total-pagar').textContent = '';
+          contenido.innerHTML = `
+            <div style="text-align:center; padding:2rem;">
+              <h3>🎉 ¡Gracias por tu compra!</h3>
+              <p>Tu pedido ha sido simulado con éxito.</p>
+              <button onclick="cerrarCarrito()" style="margin-top:1rem; background:#00ffa6; padding:0.5rem 1rem; border:none; border-radius:6px; cursor:pointer; font-weight:bold;">Volver a la tienda</button>
+            </div>
+          `;
+          carrito = [];
+        }
+        </script>
         
-    
+         <!--boton de agregar al carrito-->
+        <div class="cantidad-producto">
+          <span class="label-cantidad">Cantidad</span>
+        <div class="control-cantidad">
+            <button onclick="cambiarCantidad(this, -1)">-</button>
+            <input type="text" class="cantidad" value="1" readonly>
+            <button onclick="cambiarCantidad(this, 1)">+</button>
+        </div>
+        </div>
+        
         <ul class="beneficios">
-          <li><img src="./media/Galeria_Botines_de_cesped/Icono_envio.png" /> Envío Gratis a partir de 150€</li>
-          <li><img src="./media/Galeria_Botines_de_cesped/Icono_Pago.png" /> Paga seguro, puedes pagar en línea</li>
-          <li><img src="./media/Galeria_Botines_de_cesped/Icono_devolución.png" /> Devoluciones hasta 60 días</li>
+         <!--iconos de envio y devoluciones-->
+        <li><ion-icon name="airplane"></ion-icon> Envío Gratis a partir de 150€</li>
+        <li><ion-icon name="card"></ion-icon> Paga seguro, puedes pagar en línea</li>
+        <li><ion-icon name="cube"></ion-icon> Devoluciones hasta 60 días</li>
         </ul>
       </div>
     </section>
 
 <!--:::::::::::::::::::::::::::::::::::::::::::::::-->
-<!--............ Seccion Info G-GOLD .............-->
+<!--............ Seccion Info G-BLUE .............-->
 <!--:::::::::::::::::::::::::::::::::::::::::::::::-->
 
-<section class="gama-multitaco-premium" id="botin-g-gold">
-  <div class="galeria">
-    <img id="imagen-activa-gold" src="./media/Galeria_Botines_de_cesped/Generation_Gold_Vista_1.png" alt="G-GOLD" />
-    <div class="puntos-galeria">
-      <span class="punto activo" onclick="cambiarImagenGGOLD(0)"></span>
-      <span class="punto" onclick="cambiarImagenGGOLD(1)"></span>
-      <span class="punto" onclick="cambiarImagenGGOLD(2)"></span>
-    </div>
-  </div>
+    <section class="gama-multitaco-premium" id="botin-g-gold">
+        <div class="galeria">
+        <img id="imagen-activa-gold" src="./media/Galeria_multitaco/G-BLUE_VISTA_1.png" alt="G-GOLD" />
+        <div class="puntos-galeria">
+          <span class="punto activo" onclick="cambiarImagenGBLUE(0)"></span>
+          <span class="punto" onclick="cambiarImagenGBLUE(1)"></span>
+          <span class="punto" onclick="cambiarImagenGBLUE(2)"></span>
+        </div>
+      </div>
 
-    <div class="info-producto" id="Botin_G-GOLD">
-    <h2><span class="highlight">G-GOLD</span></h2>
+      <div class="info-producto" id="Botin_G-BLUE">
+      <h2><span class="highlight">G-BLUE</span></h2>
 
+        <div class="bloque-info">
+            
+            <h4>Materiales</h4>
+            <p>Confeccionado en material sintético técnico de última generación, este botín ofrece una combinación perfecta de resistencia, flexibilidad y ligereza. Su textura de alto rendimiento mejora el control del balón incluso en condiciones exigentes, ideal para jugadores que buscan precisión y estilo en el juego.</p>
 
+            <h4>Amortiguación y comodidad</h4>
+            <p>Equipada con una suela multitaco avanzada y sistema de absorción dinámica, proporciona una pisada fluida y protección ante impactos repetitivos. Diseñada para ofrecer máximo confort en sesiones intensas, permite movimientos explosivos con total estabilidad.</p>
 
-    <div class="bloque-info">
+            <h4>Ajuste perfecto</h4>
+            <p>Diseño ergonómico con estructura envolvente que se adapta como un guante al pie. Ofrece soporte en giros rápidos y desplazamientos agresivos, siendo perfecta para césped artificial de alto rendimiento, pistas deportivas y superficies duras. La opción premium de NEOND para jugadores exigentes.</p>
+
+        </div>
+
+        <div class="tallas-producto">
+          <div class="tallas-header">
+            <span>Tallas</span>
+            <a href="#" onclick="abrirGuia(event)">Guía de tallas</a>
+          </div>
+          <div class="grid-tallas">
+              <button onclick="seleccionarTalla(this)">21</button>
+              <button onclick="seleccionarTalla(this)">22</button>
+              <button onclick="seleccionarTalla(this)">23</button>
+              <button onclick="seleccionarTalla(this)">24</button>
+              <button onclick="seleccionarTalla(this)">25</button>
+              <button onclick="seleccionarTalla(this)">26</button>
+              <button onclick="seleccionarTalla(this)">27</button>
+              <button onclick="seleccionarTalla(this)">28</button>
+              <button onclick="seleccionarTalla(this)">29</button>
+              <button onclick="seleccionarTalla(this)">30</button>
+              <button onclick="seleccionarTalla(this)">31</button>
+              <button onclick="seleccionarTalla(this)">32</button>
+              <button onclick="seleccionarTalla(this)">33</button>
+              <button onclick="seleccionarTalla(this)">34</button>
+              <button onclick="seleccionarTalla(this)">35</button>
+              <button onclick="seleccionarTalla(this)">36</button>
+              <button onclick="seleccionarTalla(this)">37</button>
+            </div>
+        </div>
+
+        <button class="btn-carrito"
+          onclick="agregarAlCarritoDesdeProducto(
+            'G-YELLOW',
+            './media/Galeria_multitaco/G-BLUE_Carro.png',
+            65
+          )">
+          AGREGAR AL CARRITO
+        </button>
+
+        <script>
+
+        function abrirCarrito() {
+          document.getElementById('carrito-panel').classList.add('visible');
+          renderizarCarrito();
+        }
+
+        function cerrarCarrito() {
+          document.getElementById('carrito-panel').classList.remove('visible');
+        }
+
+        function agregarAlCarrito(producto) {
+          carrito.push(producto);
+          renderizarCarrito();
+        }
+
+        function agregarAlCarritoDesdeProducto(nombre, imagen, precio) {
+          const contenedor = event.target.closest('.info-producto');
+          const tallaBtn = contenedor.querySelector('.grid-tallas button.talla-activa');
+          const cantidadInput = contenedor.querySelector('.control-cantidad .cantidad');
+
+          if (!tallaBtn || !cantidadInput) {
+            alert("Selecciona una talla y cantidad válida.");
+            return;
+          }
+
+          const talla = tallaBtn.textContent;
+          const cantidad = parseInt(cantidadInput.value);
+
+          agregarAlCarrito({ nombre, talla, cantidad, precio, imagen });
+          abrirCarrito();
+        }
+
+        function renderizarCarrito() {
+          const contenido = document.getElementById('carrito-contenido');
+          const total = document.getElementById('total-pagar');
+
+          if (carrito.length === 0) {
+            contenido.innerHTML = '<p>No hay productos en el carrito.</p>';
+            total.textContent = 'Total: 0€';
+            return;
+          }
+
+          let html = '';
+          let totalPagar = 0;
+
+          carrito.forEach(item => {
+            const subtotal = item.precio * item.cantidad;
+            totalPagar += subtotal;
+            html += `
+              <div class="item-carrito">
+                <img src="${item.imagen}" alt="${item.nombre}" />
+                <div class="info">
+                  <div><strong>${item.nombre}</strong></div>
+                  <div>Talla: ${item.talla}</div>
+                  <div>Cantidad: ${item.cantidad}</div>
+                  <div>${subtotal.toFixed(2)}€</div>
+                </div>
+              </div>
+            `;
+          });
+
+          contenido.innerHTML = html;
+          total.textContent = `Total: ${totalPagar.toFixed(2)}€`;
+        }
+
+        function finalizarCompra() {
+          const contenido = document.getElementById('carrito-contenido');
+          document.getElementById('total-pagar').textContent = '';
+          contenido.innerHTML = `
+            <div style="text-align:center; padding:2rem;">
+              <h3>🎉 ¡Gracias por tu compra!</h3>
+              <p>Tu pedido ha sido simulado con éxito.</p>
+              <button onclick="cerrarCarrito()" style="margin-top:1rem; background:#00ffa6; padding:0.5rem 1rem; border:none; border-radius:6px; cursor:pointer; font-weight:bold;">Volver a la tienda</button>
+            </div>
+          `;
+          carrito = [];
+        }
+        </script>
         
-        <h4>Materiales</h4>
-        <p>Confeccionado en material sintético técnico de última generación, este botín ofrece una combinación perfecta de resistencia, flexibilidad y ligereza. Su textura de alto rendimiento mejora el control del balón incluso en condiciones exigentes, ideal para jugadores que buscan precisión y estilo en el juego.</p>
+         <!--boton de agregar al carrito-->
+        <div class="cantidad-producto">
+          <span class="label-cantidad">Cantidad</span>
+        <div class="control-cantidad">
+            <button onclick="cambiarCantidad(this, -1)">-</button>
+            <input type="text" class="cantidad" value="1" readonly>
+            <button onclick="cambiarCantidad(this, 1)">+</button>
+        </div>
+        </div>
 
-        <h4>Amortiguación y comodidad</h4>
-        <p>Equipada con una suela multitaco avanzada y sistema de absorción dinámica, proporciona una pisada fluida y protección ante impactos repetitivos. Diseñada para ofrecer máximo confort en sesiones intensas, permite movimientos explosivos con total estabilidad.</p>
+      <ul class="beneficios" id="beneficios-blue">
+          <!--iconos de envio y devoluciones-->
+        <li><ion-icon name="airplane"></ion-icon> Envío Gratis a partir de 150€</li>
+        <li><ion-icon name="card"></ion-icon> Paga seguro, puedes pagar en línea</li>
+        <li><ion-icon name="cube"></ion-icon> Devoluciones hasta 60 días</li>
+      </ul>
 
-        <h4>Ajuste perfecto</h4>
-        <p>Diseño ergonómico con estructura envolvente que se adapta como un guante al pie. Ofrece soporte en giros rápidos y desplazamientos agresivos, siendo perfecta para césped artificial de alto rendimiento, pistas deportivas y superficies duras. La opción premium de NEOND para jugadores exigentes.</p>
+    </section>
 
-    </div>
-
-    <div class="tallas-producto">
-      <div class="tallas-header">
-        <span>Tallas</span>
-        <a href="#" onclick="abrirGuia(event)">Guía de tallas</a>
-      </div>
-      <div class="grid-tallas">
-        <button onclick="seleccionarTalla(this)">30</button>
-        <button onclick="seleccionarTalla(this)">31</button>
-        <button onclick="seleccionarTalla(this)">32</button>
-        <button onclick="seleccionarTalla(this)">33</button>
-        <button onclick="seleccionarTalla(this)">34</button>
-        <button onclick="seleccionarTalla(this)">35</button>
-        <button onclick="seleccionarTalla(this)">36</button>
-        <button onclick="seleccionarTalla(this)">37</button>
-      </div>
-    </div>
-    
-
-    <button class="btn-carrito">AGREGAR AL CARRITO</button>
-    
-
-    <ul class="beneficios">
-      <li><img src="./media/Galeria_Botines_de_cesped/Icono_envio.png" /> Envío Gratis a partir de 150€</li>
-      <li><img src="./media/Galeria_Botines_de_cesped/Icono_Pago.png" /> Paga seguro, puedes pagar en línea</li>
-      <li><img src="./media/Galeria_Botines_de_cesped/Icono_devolución.png" /> Devoluciones hasta 60 días</li>
-    </ul>
-  </div>
-</section>
-
-    
-
-    <!--:::::::::::::::::::::::::::::::::::::::::::::::-->
-    <!--................... Footer.....................-->
-    <!--:::::::::::::::::::::::::::::::::::::::::::::::-->
+<!--:::::::::::::::::::::::::::::::::::::::::::::::-->
+<!--................... Footer.....................-->
+<!--:::::::::::::::::::::::::::::::::::::::::::::::-->
     
     <footer>
         <div class="footer-container">
@@ -267,8 +603,8 @@
             </div>
             <div class="footer-section">
                 <h3>Productos</h3>
-                <p><a href="./Botas_de_cesped.html">Botín césped</a></p>
-                <p><a href="./Botin_multitaco.html">Botín multitacos</a></p>
+                <p><a href="./Botas_de_cesped.html">Botas de fútbol tacos </a></p>
+                <p><a href="./Botin_multitaco.html">Botas de fútbol multitacos</a></p>
             </div>
             <div class="footer-section">
                 <h3>Suscríbete</h3>
@@ -281,9 +617,9 @@
         </div>
     </footer>
 
-    <!--:::::::::::::::::::::::::::::::::::::::::::::::-->
-    <!--............ Pop Up iniciar sesion .............-->
-    <!--:::::::::::::::::::::::::::::::::::::::::::::::-->
+<!--:::::::::::::::::::::::::::::::::::::::::::::::-->
+<!--........... Pop Up iniciar sesion .............-->
+<!--:::::::::::::::::::::::::::::::::::::::::::::::-->
         
     <div id="loginPopup" class="popup">
 
@@ -310,9 +646,9 @@
         </div>
     </div>
 
-    <!--:::::::::::::::::::::::::::::::::::::::::::::::-->
-    <!--............ Funcion en JavaScrip .............-->
-    <!--:::::::::::::::::::::::::::::::::::::::::::::::-->
+<!--:::::::::::::::::::::::::::::::::::::::::::::::-->
+<!--............ Funcion en JavaScrip .............-->
+<!--:::::::::::::::::::::::::::::::::::::::::::::::-->
 
         <script>
             // Obtener el pop-up
@@ -343,13 +679,13 @@
             }
         </script>
 
-    <!--:::::::::::::::::::::::::::::::::::::::::::::::-->
-    <!--........... Botón seleccion de tallas .........-->
-    <!--:::::::::::::::::::::::::::::::::::::::::::::::-->
+<!--:::::::::::::::::::::::::::::::::::::::::::::::-->
+<!--........... Botón seleccion de tallas .........-->
+<!--:::::::::::::::::::::::::::::::::::::::::::::::-->
 
         <div id="modal-guia" class="modal-guia">
             <span class="cerrar-guia" onclick="cerrarGuia()">&times;</span>
-            <img src="./media/guia_tallas.png" alt="Guía de tallas" />
+            <img src="./media/guia_de_tallas.png" alt="Guía de tallas" />
           </div>
           
           <script>
@@ -370,52 +706,186 @@
             }
             
             </script>
-    <!--:::::::::::::::::::::::::::::::::::::::::::::::-->
-    <!--....... Seccion para las galerias JAVASCRIPT...-->
-    <!--:::::::::::::::::::::::::::::::::::::::::::::::-->
+            
+<!--:::::::::::::::::::::::::::::::::::::::::::::::-->
+<!--....... Seccion para las galerias JAVASCRIPT...-->
+<!--:::::::::::::::::::::::::::::::::::::::::::::::-->
 
     <script>
       // Botin G-YELLOW
       function cambiarImagenGONE(index) {
         const imagenes = [
-          './media/Galeria_Botines_de_cesped/Generation_One_Vista_1.png',
-          './media/Galeria_Botines_de_cesped/Generation_One_Vista_2.png',
-          './media/Galeria_Botines_de_cesped/Generation_One_Vista_3.png'
+          './media/Galeria_multitaco/G-YELLOW_VISTA_1.png',
+          './media/Galeria_multitaco/G-YELLOW_VISTA_2.png',
+          './media/Galeria_multitaco/G-YELLOW_VISTA_3.png'
         ];
         const seccion = document.getElementById('Botin_G-YELLOW').closest('.gama-multitaco-basica')
         seccion.querySelector('.galeria img').src = imagenes[index];
         seccion.querySelectorAll('.punto').forEach((p, i) => {
           p.classList.toggle('activo', i === index);
         });
+                const beneficiosYellow = document.querySelectorAll('#beneficios-yellow img');
+        beneficiosYellow.forEach((img, i) => {
+          img.src = imagenes[i];
+        });
+
       }
     
       // Botin G-GREEN II
       function cambiarImagenGGREEN(index) {
         const imagenes = [
-          './media/Galeria_Botines_de_cesped/Generation_Green_Vista_1.png',
-          './media/Galeria_Botines_de_cesped/Generation_Green_Vista_2.png',
-          './media/Galeria_Botines_de_cesped/Generation_Green_Vista_3.png'
+          './media/Galeria_multitaco/G-GREEN2_VISTA_1.png',
+          './media/Galeria_multitaco/G-GREEN2_VISTA_2.png',
+          './media/Galeria_multitaco/G-GREEN2_VISTA_3.png'
         ];
         const seccion = document.getElementById('Botin_G-GREEN').closest('.gama-multitaco-media');
         seccion.querySelector('.galeria img').src = imagenes[index];
         seccion.querySelectorAll('.punto').forEach((p, i) => {
           p.classList.toggle('activo', i === index);
         });
+
+        const beneficiosGreen = document.querySelectorAll('#beneficios-green img');
+        beneficiosGreen.forEach((img, i) => {
+          img.src = imagenes[i];
+        });
       }
-    
       // Botin G-GOLD
-      function cambiarImagenGGOLD(index) {
+            function cambiarImagenGBLUE(index) {
         const imagenes = [
-          './media/Galeria_Botines_de_cesped/Generation_Gold_Vista_1.png',
-          './media/Galeria_Botines_de_cesped/Generation_Gold_Vista_2.png',
-          './media/Galeria_Botines_de_cesped/Generation_Gold_Vista_3.png'
+          './media/Galeria_multitaco/G-BLUE_VISTA_1.png',
+          './media/Galeria_multitaco/G-BLUE_VISTA_2.png',
+          './media/Galeria_multitaco/G-BLUE_VISTA_3.png'
         ];
-        const seccion = document.getElementById('Botin_G-GOLD').closest('.gama-multitaco-premium');
+        const seccion = document.getElementById('Botin_G-BLUE').closest('.gama-multitaco-premium');
         seccion.querySelector('.galeria img').src = imagenes[index];
         seccion.querySelectorAll('.punto').forEach((p, i) => {
           p.classList.toggle('activo', i === index);
         });
+
+        const beneficiosBlue = document.querySelectorAll('#beneficios-blue img');
+        beneficiosBlue.forEach((img, i) => {
+          img.src = imagenes[i];
+        });
       }
     </script>
+    <!--:::::::::::::::::::::::::::::::::::::::::::::::-->
+    <!--.............. Cambiar cantidad ...-...........-->
+    <!--:::::::::::::::::::::::::::::::::::::::::::::::-->
+    <script>
+      function cambiarCantidad(elemento, valor) {
+      const contenedor = elemento.closest('.control-cantidad');
+      const input = contenedor.querySelector('.cantidad');
+      let cantidad = parseInt(input.value);
+      cantidad = isNaN(cantidad) ? 1 : cantidad + valor;
+      if (cantidad < 1) cantidad = 1;
+      input.value = cantidad;
+    }
+    </script>
+
+    <!--:::::::::::::::::::::::::::::::::::::::::::::::-->
+    <!--.............. Funcionalidad carrito ......... -->
+    <!--:::::::::::::::::::::::::::::::::::::::::::::::-->
+
+      <script>
+      let carrito = [];
+
+      function actualizarContadorCarrito() {
+        const badge = document.getElementById('badge-carrito');
+        const total = carrito.reduce((acc, item) => acc + item.cantidad, 0);
+        badge.textContent = total;
+        const contador = document.getElementById('contador-carrito');
+        contador.textContent = total > 0 ? `(${total} productos)` : '';
+      }
+
+      function abrirCarrito() {
+        document.getElementById('carrito-panel').classList.add('visible');
+        renderizarCarrito();
+      }
+
+      function cerrarCarrito() {
+        document.getElementById('carrito-panel').classList.remove('visible');
+      }
+
+      function agregarAlCarrito(producto) {
+        const existente = carrito.find(p => p.nombre === producto.nombre && p.talla === producto.talla);
+        if (existente) {
+          existente.cantidad += producto.cantidad;
+        } else {
+          carrito.push(producto);
+        }
+        renderizarCarrito();
+        actualizarContadorCarrito();
+      }
+
+      function eliminarDelCarrito(index) {
+        carrito.splice(index, 1);
+        renderizarCarrito();
+        actualizarContadorCarrito();
+      }
+
+      function agregarAlCarritoDesdeProducto(nombre, imagen, precio) {
+        const contenedor = event.target.closest('.info-producto');
+        const tallaBtn = contenedor.querySelector('.grid-tallas button.talla-activa');
+        const cantidadInput = contenedor.querySelector('.control-cantidad .cantidad');
+
+        if (!tallaBtn || !cantidadInput) {
+          alert("Selecciona una talla y cantidad válida.");
+          return;
+        }
+
+        const talla = tallaBtn.textContent;
+        const cantidad = parseInt(cantidadInput.value);
+
+        agregarAlCarrito({ nombre, talla, cantidad, precio, imagen });
+        abrirCarrito();
+      }
+
+      function renderizarCarrito() {
+        const contenido = document.getElementById('carrito-contenido');
+        const total = document.getElementById('total-pagar');
+
+        if (carrito.length === 0) {
+          contenido.innerHTML = '<p>No hay productos en el carrito.</p>';
+          total.textContent = 'Total: 0€';
+          return;
+        }
+
+        let html = '';
+        let totalPagar = 0;
+
+        carrito.forEach((item, index) => {
+          const subtotal = item.precio * item.cantidad;
+          totalPagar += subtotal;
+          html += `
+            <div class="item-carrito">
+              <img src="${item.imagen}" alt="${item.nombre}" />
+              <div class="info">
+                <div><strong>${item.nombre}</strong><button class="eliminar" onclick="eliminarDelCarrito(${index})"><ion-icon name="trash-outline"></ion-icon></button></div>
+                <div><span>Talla:</span><span>${item.talla}</span></div>
+                <div><span>Cantidad:</span><span>${item.cantidad}</span></div>
+                <div><span>Subtotal:</span><span>${subtotal.toFixed(2)}€</span></div>
+              </div>
+            </div>
+          `;
+        });
+
+        contenido.innerHTML = html;
+        total.textContent = `Total: ${totalPagar.toFixed(2)}€`;
+      }
+
+      function finalizarCompra() {
+        const contenido = document.getElementById('carrito-contenido');
+        document.getElementById('total-pagar').textContent = '';
+        contenido.innerHTML = `
+          <div style="text-align:center; padding:2rem;">
+            <h3>🎉 ¡Gracias por tu compra!</h3>
+            <p>Tu pedido ha sido simulado con éxito.</p>
+            <button onclick="cerrarCarrito()" style="margin-top:1rem; background:#00ffa6; padding:0.5rem 1rem; border:none; border-radius:6px; cursor:pointer; font-weight:bold;">Volver a la tienda</button>
+          </div>
+        `;
+        carrito = [];
+        actualizarContadorCarrito();
+      }
+      </script>
 </body>
 </html>
