@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>NEOND - Blog </title>
+  <link rel="icon" href="./media/Fav_icon-blanco.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="stylesheet" href="botas_cesped.css" />
+  <link rel="stylesheet" href="Xperience_styles.css" />
+  <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+  <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+</head>
+  
+<body>
+  <header>
+    <div class="logo">
+      <a href="index.html">
+         <img src="./media/Logo_NEOND_blanco-07-07.png" alt="Logo NEOND">
+      </a>
+    </div>
+    <nav class="menu_navegacion">
+      <ul>
+        <div class="boton_color"><li><a href="desafios.html">Desafíos</a></li></div>
+        <div class="boton_color"><li><a href="Entrevistas.html">Entrevistas</a></li></div>
+        <div class="boton_color"><li><a href="#login">Blog</a></li></div>
+        <div class="boton_color">
+        <li><a href="#" onclick="abrirCarrito(); return false;"><ion-icon name="cart-outline" style="font-size: 28px;"></ion-icon></a></li>
+        <link rel="stylesheet" href="Blog_style.css">
+        <link rel="stylesheet" href="styles.css">
+        <link rel="stylesheet" href="Xperience_styles.css">
+        <link rel="stylesheet" href="botas_cesped.css">
+
+        </div>
+      </ul>
+    </nav>
+  </header>
+
+    <!--:::::::::::::::::::::::::::::::::::::::::::::::-->
+    <!--.............. Carrito de compras ............ -->
+    <!--:::::::::::::::::::::::::::::::::::::::::::::::-->
+
+    <div id="carrito-panel" class="carrito-panel oculto">
+        <div class="carrito-header">
+            <h2>Tu carrito</h2>
+            <button class="cerrar-carrito" onclick="cerrarCarrito()">×</button>
+        </div>
+        <div class="carrito-contenido" id="carrito-contenido">
+            <p>No hay productos en el carrito.</p>
+        </div>
+        <div class="carrito-footer">
+            <div id="total-pagar" style="margin-bottom: 1rem; font-weight: bold;">Total: 0€</div>
+            <button onclick="finalizarCompra()">Finalizar compra</button>
+        </div>
+        </div>
+
+        
+    <!--:::::::::::::::::::::::::::::::::::::::::::::::-->
+    <!--.............. Pagina en construccion  ............ -->
+    <!--:::::::::::::::::::::::::::::::::::::::::::::::-->
+
+        <section class="blog-construccion">
+        <div class="contenido-construccion">
+            <iframe src="https://giphy.com/embed/f7b9ltJ4FrhnsKjYx2" width="480" height="269" style="" frameBorder="0" class="giphy-embed" allowFullScreen></iframe>
+            <h1>COMING SOON</h1>
+            <p>Este espacio se está preparando para despegar.</p>
+            <p>Aquí encontrarás historias reales, desafíos deportivos,<br> contenido exclusivo NEOND y mucho más.</p>
+            <h2>Prepárate para llevar tu experiencia al siguiente nivel.</h2>
+        </div>
+        <audio id="sonido-construccion" autoplay>
+            <source src="./media/sonido_construccion.mp3" type="audio/mpeg">
+            Tu navegador no soporta el audio.
+        </audio>
+        </section>

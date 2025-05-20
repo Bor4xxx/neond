@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NEOND</title>
+    <link rel="icon" type="image/x-icon" href="./media/Fav_icon-blanco.png">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100..900&display=swap" rel="stylesheet">
+    <!-- CSS principal -->
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="Style_tienda.css">
+    <!-- Ionicons -->
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+</head>
+    <!--:::::::::::::::::::::::::::::::::::::::::::::::-->
+    <!--.................. HEADER .....................-->
+    <!--:::::::::::::::::::::::::::::::::::::::::::::::-->
+    <header>
+        <div class="logo">
+            <a href="index.html">
+                <img src="./media/Logo_NEOND_blanco-07-07.png" alt="Logo NEOND">
+            </a>
+        </div>
+        <nav class="menu_navegacion">
+            <ul>
+                <div class="boton_color"><li><a href="#experience">Xperience</a></li></div>
+                <div class="boton_color"><li><a href="#productos">Productos</a></li></div>
+                <div class="boton_color"><li><a href="#login">Inicia Sesión</a></li></div>
+                <div class="boton_color"><li><a href="#" onclick="abrirCarrito(); return false;"><ion-icon name="cart-outline" style="font-size: 28px;"></ion-icon></a></li></div>
+            </ul>
+        </nav>
+    </header>
+
+        <section class="tiendas-container">
+    <h1>Encuentra tu tienda NEOND</h1>
+
+    <!-- Filtro por ciudad -->
+    <div class="filtro-ciudad">
+      <label for="ciudad-select">Filtrar por ciudad:</label>
+      <select id="ciudad-select">
+        <option value="todas">Todas</option>
+        <option value="madrid">Madrid</option>
+        <option value="valencia">Valencia</option>
+      </select>
+    </div>
+
+    <div class="contenido-tienda">
+      <div class="listado-tiendas">
+        <div class="tienda" data-ciudad="madrid">
+          <h2>NEOND Madrid - Gran via </h2>
+          <p>Calle Estadio Futuro 23, Madrid, 28013</p>
+          <p class="abierta">Abierta - Cierra a las 21:00</p>
+        </div>
+        <div class="tienda" data-ciudad="valencia">
+          <h2>NEOND Valencia </h2>
+          <p>Avenida Neón Kids 102, Valencia, 46010</p>
+          <p class="abierta">Abierta - Cierra a las 20:30</p>
+        </div>
+      </div>
+
+      <div class="mapa">
+        <!-- Mapa que cambia según selección -->
+        <iframe id="mapa-iframe"
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3036.513660240653!2d-3.7037902845978985!3d40.420287963176096!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd42288768cfadfb%3A0x8f3eb71e9a771f2a!2sGran%20V%C3%ADa%2C%2030%2C%2028013%20Madrid!5e0!3m2!1ses!2ses!4v1716211990001!5m2!1ses!2ses"
+          width="100%" height="350" style="border:0; border-radius: 12px;" allowfullscreen=""
+          loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+      </div>
+    </div>
+
+    <div class="galeria-tienda">
+      <h3>Conoce nuestras tiendas</h3>
+      <div class="galeria-imagenes">
+        <img src="./media/Tiendas_1.png" alt="Interior tienda NEOND">
+        <img src="./media/Tiendas_2.png" alt="Zona de prueba de botines">
+      </div>
+    </div>
+  </section>
+
+  <script src="Tienda.js"></script>
+  <!--:::::::::::::::::::::::::::::::::::::::::::::::-->
+    <!--.................. FOOTER .....................-->
+    <!--:::::::::::::::::::::::::::::::::::::::::::::::-->
+    <footer>
+        <div class="footer-container">
+            <div class="footer-section">
+                <h3>NEOND Store</h3>
+                <a href="https://maps.app.goo.gl/TL8U7bPpWn94exdLA" target="_blank">Nuestra tienda</a>
+                <p>Teléfono: 865 616 65</p>
+                <a href="mailto:neon@info.com">neon@info.com</a>
+                <div class="social-media">
+                    <a href="https://www.instagram.com" target="_blank"><img src="./media/Instagram.png" alt="Instagram"></a>
+                    <a href="https://www.twitter.com" target="_blank"><img src="./media/X Twitter.png" alt="Twitter"></a>
+                    <a href="https://www.facebook.com" target="_blank"><img src="./media/Facebook.png" alt="Facebook"></a>
+                </div>
+            </div>
+            <div class="footer-section">
+                <h3>Productos</h3>
+                <p><a href="./Botas_de_cesped.html">Botas de fútbol tacos </a></p>
+                <p><a href="./Botin_multitaco.html">Botas de fútbol multitacos</a></p>
+            </div>
+            <div class="footer-section">
+                <h3>Suscríbete</h3>
+                <label for="email">Email</label>
+                <input type="email" id="email" placeholder="Tu correo aquí">
+                <button class="subscribe-btn">SUSCRIBIRSE</button>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2025 NEOND_design by <a href="#">@skirladesign</a></p>
+        </div>
+    </footer>
+    </body>

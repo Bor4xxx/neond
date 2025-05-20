@@ -209,24 +209,35 @@
           let html = '';
           let totalPagar = 0;
 
-          carrito.forEach(item => {
+          carrito.forEach((item, index) => {
             const subtotal = item.precio * item.cantidad;
             totalPagar += subtotal;
             html += `
-              <div class="item-carrito">
-                <img src="${item.imagen}" alt="${item.nombre}" />
-                <div class="info">
-                  <div><strong>${item.nombre}</strong></div>
-                  <div>Talla: ${item.talla}</div>
-                  <div>Cantidad: ${item.cantidad}</div>
-                  <div>${subtotal.toFixed(2)}€</div>
-                </div>
-              </div>
+            
+              <div class="item-carrito" style="display: flex; align-items: center; justify-content: space-between; gap: 10px;">
+      <div style="display: flex; align-items: center; gap: 10px;">
+        <img src="${item.imagen}" alt="${item.nombre}" style="width: 50px; height: 50px; object-fit: cover; border-radius: 6px;" />
+        <div class="info">
+          <div><strong>${item.nombre}</strong></div>
+          <div>Talla: ${item.talla}</div>
+          <div>Cantidad: ${item.cantidad}</div>
+          <div>${subtotal.toFixed(2)}€</div>
+        </div>
+      </div>
+      <button class="eliminar-item" onclick="eliminarDelCarrito(${index})" style="background: none; border: none; cursor: pointer; margin-left: 10px;">
+        <ion-icon name='trash-outline' style="font-size: 1.7em; color: #ff4d4d;"></ion-icon>
+      </button>
+    </div>
             `;
           });
 
           contenido.innerHTML = html;
           total.textContent = `Total: ${totalPagar.toFixed(2)}€`;
+        }
+
+        function eliminarDelCarrito(index) {
+          carrito.splice(index, 1);
+          renderizarCarrito();
         }
 
         function finalizarCompra() {
@@ -376,24 +387,34 @@
           let html = '';
           let totalPagar = 0;
 
-          carrito.forEach(item => {
+          carrito.forEach((item, index) => {
             const subtotal = item.precio * item.cantidad;
             totalPagar += subtotal;
             html += `
-              <div class="item-carrito">
-                <img src="${item.imagen}" alt="${item.nombre}" />
-                <div class="info">
-                  <div><strong>${item.nombre}</strong></div>
-                  <div>Talla: ${item.talla}</div>
-                  <div>Cantidad: ${item.cantidad}</div>
-                  <div>${subtotal.toFixed(2)}€</div>
-                </div>
-              </div>
+              <div class="item-carrito" style="display: flex; align-items: center; justify-content: space-between; gap: 10px;">
+      <div style="display: flex; align-items: center; gap: 10px;">
+        <img src="${item.imagen}" alt="${item.nombre}" style="width: 50px; height: 50px; object-fit: cover; border-radius: 6px;" />
+        <div class="info">
+          <div><strong>${item.nombre}</strong></div>
+          <div>Talla: ${item.talla}</div>
+          <div>Cantidad: ${item.cantidad}</div>
+          <div>${subtotal.toFixed(2)}€</div>
+        </div>
+      </div>
+      <button class="eliminar-item" onclick="eliminarDelCarrito(${index})" style="background: none; border: none; cursor: pointer; margin-left: 10px;">
+        <ion-icon name='trash-outline' style="font-size: 1.7em; color: #ff4d4d;"></ion-icon>
+      </button>
+    </div>
             `;
           });
 
           contenido.innerHTML = html;
           total.textContent = `Total: ${totalPagar.toFixed(2)}€`;
+        }
+
+        function eliminarDelCarrito(index) {
+          carrito.splice(index, 1);
+          renderizarCarrito();
         }
 
         function finalizarCompra() {
@@ -542,24 +563,34 @@
           let html = '';
           let totalPagar = 0;
 
-          carrito.forEach(item => {
+          carrito.forEach((item, index) => {
             const subtotal = item.precio * item.cantidad;
             totalPagar += subtotal;
             html += `
-              <div class="item-carrito">
-                <img src="${item.imagen}" alt="${item.nombre}" />
-                <div class="info">
-                  <div><strong>${item.nombre}</strong></div>
-                  <div>Talla: ${item.talla}</div>
-                  <div>Cantidad: ${item.cantidad}</div>
-                  <div>${subtotal.toFixed(2)}€</div>
-                </div>
-              </div>
+              <div class="item-carrito" style="display: flex; align-items: center; justify-content: space-between; gap: 10px;">
+      <div style="display: flex; align-items: center; gap: 10px;">
+        <img src="${item.imagen}" alt="${item.nombre}" style="width: 50px; height: 50px; object-fit: cover; border-radius: 6px;" />
+        <div class="info">
+          <div><strong>${item.nombre}</strong></div>
+          <div>Talla: ${item.talla}</div>
+          <div>Cantidad: ${item.cantidad}</div>
+          <div>${subtotal.toFixed(2)}€</div>
+        </div>
+      </div>
+      <button class="eliminar-item" onclick="eliminarDelCarrito(${index})" style="background: none; border: none; cursor: pointer; margin-left: 10px;">
+        <ion-icon name='trash-outline' style="font-size: 1.7em; color: #ff4d4d;"></ion-icon>
+      </button>
+    </div>
             `;
           });
 
           contenido.innerHTML = html;
           total.textContent = `Total: ${totalPagar.toFixed(2)}€`;
+        }
+
+        function eliminarDelCarrito(index) {
+          carrito.splice(index, 1);
+          renderizarCarrito();
         }
 
         function finalizarCompra() {
@@ -810,24 +841,34 @@
           let html = '';
           let totalPagar = 0;
 
-          carrito.forEach(item => {
+          carrito.forEach((item, index) => {
             const subtotal = item.precio * item.cantidad;
             totalPagar += subtotal;
             html += `
-              <div class="item-carrito">
-                <img src="${item.imagen}" alt="${item.nombre}" />
-                <div class="info">
-                  <div><strong>${item.nombre}</strong></div>
-                  <div>Talla: ${item.talla}</div>
-                  <div>Cantidad: ${item.cantidad}</div>
-                  <div>${subtotal.toFixed(2)}€</div>
-                </div>
-              </div>
+              <div class="item-carrito" style="display: flex; align-items: center; justify-content: space-between; gap: 10px;">
+      <div style="display: flex; align-items: center; gap: 10px;">
+        <img src="${item.imagen}" alt="${item.nombre}" style="width: 50px; height: 50px; object-fit: cover; border-radius: 6px;" />
+        <div class="info">
+          <div><strong>${item.nombre}</strong></div>
+          <div>Talla: ${item.talla}</div>
+          <div>Cantidad: ${item.cantidad}</div>
+          <div>${subtotal.toFixed(2)}€</div>
+        </div>
+      </div>
+      <button class="eliminar-item" onclick="eliminarDelCarrito(${index})" style="background: none; border: none; cursor: pointer; margin-left: 10px;">
+        <ion-icon name='trash-outline' style="font-size: 1.7em; color: #ff4d4d;"></ion-icon>
+      </button>
+    </div>
             `;
           });
 
           contenido.innerHTML = html;
           total.textContent = `Total: ${totalPagar.toFixed(2)}€`;
+        }
+
+        function eliminarDelCarrito(index) {
+          carrito.splice(index, 1);
+          renderizarCarrito();
         }
 
         function finalizarCompra() {

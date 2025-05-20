@@ -1,0 +1,69 @@
+body {
+    font-family: "Montserrat", sans-serif;
+    font-weight: normal;
+    margin: 0;
+    padding: 0;
+    background-color: #000;
+    color: #fff;
+}
+
+/* Estilos para la cabecera */
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    background-color: #000;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+.blog-construccion {
+  background-color: black;
+  color: white;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+  font-family: "Montserrat", sans-serif;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.contenido-construccion {
+  max-width: 800px;
+  animation: aparecer 1s ease-out;
+}
+
+.gif-construccion {
+  max-width: 300px;
+  margin-bottom: 1rem;
+  animation: flotar 2s infinite ease-in-out;
+}
+
+.blog-construccion h1 {
+  font-size: 3rem;
+  letter-spacing: 4px;
+  color: #ff3b80;
+  margin-bottom: 1rem;
+}
+
+.blog-construccion h2 {
+  color: #00ffa6;
+  margin-top: 2rem;
+}
+
+@keyframes flotar {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+}
+
+@keyframes aparecer {
+  from { opacity: 0; transform: translateY(40px); }
+  to { opacity: 1; transform: translateY(0); }
+}
